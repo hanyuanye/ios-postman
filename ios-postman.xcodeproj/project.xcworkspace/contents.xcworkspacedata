@@ -2,6 +2,18 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:ios-postman.xcodeproj">
+      location = "group:../ios-postman/NetworkProvider.swift">
+   </FileRef>
+   <FileRef
+      location = "group:/Users/hanyuanye/Documents/ios-postman/ios-postman/Extensions/String+Extension.swift">
+   </FileRef>
+   <FileRef
+      location = "group:../ios-postman/Helper/Either.swift">
+   </FileRef>
+   <FileRef
+      location = "group:/Users/hanyuanye/Documents/ios-postman/ios-postman/Extensions/UIView+Extension.swift">
+   </FileRef>
+   <FileRef
+      location = "self:">
    </FileRef>
 </Workspace>

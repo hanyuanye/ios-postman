@@ -1,11 +1,3 @@
-//
-//  ios_postmanTests.swift
-//  ios-postmanTests
-//
-//  Created by Hanyuan Ye on 2/13/20.
-//  Copyright © 2020 hanyuanye. All rights reserved.
-//
-
 import XCTest
 @testable import ios_postman
 

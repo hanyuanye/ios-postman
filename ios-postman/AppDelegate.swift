@@ -1,11 +1,3 @@
-//
-//  AppDelegate.swift
-//  ios-postman
-//
-//  Created by Hanyuan Ye on 2/13/20.
-//  Copyright © 2020 hanyuanye. All rights reserved.
-//
-
 import UIKit
 
 @UIApplicationMain

@@ -1,11 +1,3 @@
-//
-//  ios_postmanUITests.swift
-//  ios-postmanUITests
-//
-//  Created by Hanyuan Ye on 2/13/20.
-//  Copyright © 2020 hanyuanye. All rights reserved.
-//
-
 import XCTest
 
 class ios_postmanUITests: XCTestCase {

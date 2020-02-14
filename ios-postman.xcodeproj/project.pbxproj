@@ -3,18 +3,37 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F90B50DE23F5EA8300161684 /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F90B50DD23F5EA8300161684 /* RxRelay.framework */; };
+		F90B50E023F5F43C00161684 /* Differentiator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F90B50DF23F5F43C00161684 /* Differentiator.framework */; };
+		F90B50E623F5F48300161684 /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F90B50E223F5F48300161684 /* ReactiveSwift.framework */; };
+		F90B50E723F5F48300161684 /* RxAtomic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F90B50E323F5F48300161684 /* RxAtomic.framework */; };
+		F90B50E823F5F48300161684 /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F90B50E423F5F48300161684 /* RxBlocking.framework */; };
+		F90B50E923F5F48300161684 /* ReactiveMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F90B50E523F5F48300161684 /* ReactiveMapKit.framework */; };
+		F90B50EB23F5F8FD00161684 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F90B50EA23F5F8FD00161684 /* Launch Screen.storyboard */; };
+		F90B50EF23F6071200161684 /* AppTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90B50EE23F6071200161684 /* AppTextField.swift */; };
+		F90B50F923F6101B00161684 /* AppKeyValueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90B50F823F6101B00161684 /* AppKeyValueView.swift */; };
+		F90B50FB23F62A8F00161684 /* AppKeyValuesStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90B50FA23F62A8F00161684 /* AppKeyValuesStackView.swift */; };
+		F90B50FD23F71ACA00161684 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90B50FC23F71ACA00161684 /* UIColor+Extension.swift */; };
+		F90B50FF23F72A9400161684 /* Observable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90B50FE23F72A9400161684 /* Observable+Extension.swift */; };
 		F91D039623F5DB12002A88A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91D039523F5DB12002A88A6 /* AppDelegate.swift */; };
 		F91D039823F5DB12002A88A6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91D039723F5DB12002A88A6 /* SceneDelegate.swift */; };
-		F91D039A23F5DB12002A88A6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91D039923F5DB12002A88A6 /* ViewController.swift */; };
-		F91D039D23F5DB12002A88A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F91D039B23F5DB12002A88A6 /* Main.storyboard */; };
+		F91D039A23F5DB12002A88A6 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91D039923F5DB12002A88A6 /* MainViewController.swift */; };
 		F91D039F23F5DB12002A88A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F91D039E23F5DB12002A88A6 /* Assets.xcassets */; };
-		F91D03A223F5DB12002A88A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F91D03A023F5DB12002A88A6 /* LaunchScreen.storyboard */; };
 		F91D03AD23F5DB13002A88A6 /* ios_postmanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91D03AC23F5DB13002A88A6 /* ios_postmanTests.swift */; };
 		F91D03B823F5DB13002A88A6 /* ios_postmanUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91D03B723F5DB13002A88A6 /* ios_postmanUITests.swift */; };
+		F91D03E123F5E762002A88A6 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F91D03DB23F5E762002A88A6 /* ReactiveCocoa.framework */; };
+		F91D03E523F5E763002A88A6 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F91D03DD23F5E762002A88A6 /* SnapKit.framework */; };
+		F91D03E723F5E763002A88A6 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F91D03DE23F5E762002A88A6 /* RxCocoa.framework */; };
+		F91D03E923F5E763002A88A6 /* RxDataSources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F91D03DF23F5E762002A88A6 /* RxDataSources.framework */; };
+		F91D03EB23F5E763002A88A6 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F91D03E023F5E762002A88A6 /* RxSwift.framework */; };
+		F96C560523F72C8B00580AC2 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96C560423F72C8B00580AC2 /* UIView+Extension.swift */; };
+		F96C560823F72D0700580AC2 /* Either.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96C560723F72D0700580AC2 /* Either.swift */; };
+		F96C560A23F7423200580AC2 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96C560923F7423100580AC2 /* String+Extension.swift */; };
+		F96C560C23F7439E00580AC2 /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96C560B23F7439E00580AC2 /* NetworkProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,13 +54,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F90B50DD23F5EA8300161684 /* RxRelay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxRelay.framework; path = Carthage/Build/iOS/RxRelay.framework; sourceTree = "<group>"; };
+		F90B50DF23F5F43C00161684 /* Differentiator.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Differentiator.framework; path = Carthage/Build/iOS/Differentiator.framework; sourceTree = "<group>"; };
+		F90B50E223F5F48300161684 /* ReactiveSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveSwift.framework; path = Carthage/Build/iOS/ReactiveSwift.framework; sourceTree = "<group>"; };
+		F90B50E323F5F48300161684 /* RxAtomic.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxAtomic.framework; path = Carthage/Build/iOS/RxAtomic.framework; sourceTree = "<group>"; };
+		F90B50E423F5F48300161684 /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
+		F90B50E523F5F48300161684 /* ReactiveMapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveMapKit.framework; path = Carthage/Build/iOS/ReactiveMapKit.framework; sourceTree = "<group>"; };
+		F90B50EA23F5F8FD00161684 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		F90B50EE23F6071200161684 /* AppTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTextField.swift; sourceTree = "<group>"; };
+		F90B50F823F6101B00161684 /* AppKeyValueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppKeyValueView.swift; path = "/Users/hanyuanye/Documents/ios-postman/ios-postman/UiKit Subclasses/AppKeyValueView.swift"; sourceTree = "<absolute>"; };
+		F90B50FA23F62A8F00161684 /* AppKeyValuesStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppKeyValuesStackView.swift; path = "/Users/hanyuanye/Documents/ios-postman/ios-postman/UiKit Subclasses/AppKeyValuesStackView.swift"; sourceTree = "<absolute>"; };
+		F90B50FC23F71ACA00161684 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIColor+Extension.swift"; path = "/Users/hanyuanye/Documents/ios-postman/ios-postman/Extensions/UIColor+Extension.swift"; sourceTree = "<absolute>"; };
+		F90B50FE23F72A9400161684 /* Observable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Observable+Extension.swift"; path = "/Users/hanyuanye/Documents/ios-postman/ios-postman/Extensions/Observable+Extension.swift"; sourceTree = "<absolute>"; };
 		F91D039223F5DB12002A88A6 /* ios-postman.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-postman.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F91D039523F5DB12002A88A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F91D039723F5DB12002A88A6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F91D039923F5DB12002A88A6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		F91D039C23F5DB12002A88A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F91D039923F5DB12002A88A6 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		F91D039E23F5DB12002A88A6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		F91D03A123F5DB12002A88A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F91D03A323F5DB12002A88A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F91D03A823F5DB13002A88A6 /* ios-postmanTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ios-postmanTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F91D03AC23F5DB13002A88A6 /* ios_postmanTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_postmanTests.swift; sourceTree = "<group>"; };
@@ -49,6 +78,22 @@
 		F91D03B323F5DB13002A88A6 /* ios-postmanUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ios-postmanUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F91D03B723F5DB13002A88A6 /* ios_postmanUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_postmanUITests.swift; sourceTree = "<group>"; };
 		F91D03B923F5DB13002A88A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F91D03C623F5E458002A88A6 /* ios-postman */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "ios-postman"; sourceTree = "<group>"; };
+		F91D03C723F5E46C002A88A6 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Frameworks/RxCocoa.framework; sourceTree = "<group>"; };
+		F91D03C823F5E46C002A88A6 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Frameworks/RxSwift.framework; sourceTree = "<group>"; };
+		F91D03CA23F5E46C002A88A6 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Frameworks/SnapKit.framework; sourceTree = "<group>"; };
+		F91D03CB23F5E46C002A88A6 /* RxDataSources.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxDataSources.framework; path = Frameworks/RxDataSources.framework; sourceTree = "<group>"; };
+		F91D03CC23F5E46C002A88A6 /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = Frameworks/ReactiveCocoa.framework; sourceTree = "<group>"; };
+		F91D03DB23F5E762002A88A6 /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = Carthage/Build/iOS/ReactiveCocoa.framework; sourceTree = "<group>"; };
+		F91D03DC23F5E762002A88A6 /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/iOS/RxTest.framework; sourceTree = "<group>"; };
+		F91D03DD23F5E762002A88A6 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
+		F91D03DE23F5E762002A88A6 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
+		F91D03DF23F5E762002A88A6 /* RxDataSources.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxDataSources.framework; path = Carthage/Build/iOS/RxDataSources.framework; sourceTree = "<group>"; };
+		F91D03E023F5E762002A88A6 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		F96C560423F72C8B00580AC2 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIView+Extension.swift"; path = "/Users/hanyuanye/Documents/ios-postman/ios-postman/Extensions/UIView+Extension.swift"; sourceTree = "<absolute>"; };
+		F96C560723F72D0700580AC2 /* Either.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Either.swift; sourceTree = "<group>"; };
+		F96C560923F7423100580AC2 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "String+Extension.swift"; path = "/Users/hanyuanye/Documents/ios-postman/ios-postman/Extensions/String+Extension.swift"; sourceTree = "<absolute>"; };
+		F96C560B23F7439E00580AC2 /* NetworkProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +101,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F90B50E623F5F48300161684 /* ReactiveSwift.framework in Frameworks */,
+				F90B50E723F5F48300161684 /* RxAtomic.framework in Frameworks */,
+				F90B50E823F5F48300161684 /* RxBlocking.framework in Frameworks */,
+				F90B50E923F5F48300161684 /* ReactiveMapKit.framework in Frameworks */,
+				F90B50E023F5F43C00161684 /* Differentiator.framework in Frameworks */,
+				F90B50DE23F5EA8300161684 /* RxRelay.framework in Frameworks */,
+				F91D03E723F5E763002A88A6 /* RxCocoa.framework in Frameworks */,
+				F91D03E523F5E763002A88A6 /* SnapKit.framework in Frameworks */,
+				F91D03EB23F5E763002A88A6 /* RxSwift.framework in Frameworks */,
+				F91D03E923F5E763002A88A6 /* RxDataSources.framework in Frameworks */,
+				F91D03E123F5E762002A88A6 /* ReactiveCocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +132,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F90B50F623F60FE500161684 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F90B50FE23F72A9400161684 /* Observable+Extension.swift */,
+				F96C560423F72C8B00580AC2 /* UIView+Extension.swift */,
+				F90B50FC23F71ACA00161684 /* UIColor+Extension.swift */,
+				F96C560923F7423100580AC2 /* String+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F90B50F723F60FF600161684 /* UiKit Subclasses */ = {
+			isa = PBXGroup;
+			children = (
+				F90B50F823F6101B00161684 /* AppKeyValueView.swift */,
+				F90B50FA23F62A8F00161684 /* AppKeyValuesStackView.swift */,
+				F90B50EE23F6071200161684 /* AppTextField.swift */,
+			);
+			path = "UiKit Subclasses";
+			sourceTree = "<group>";
+		};
 		F91D038923F5DB12002A88A6 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +160,7 @@
 				F91D03AB23F5DB13002A88A6 /* ios-postmanTests */,
 				F91D03B623F5DB13002A88A6 /* ios-postmanUITests */,
 				F91D039323F5DB12002A88A6 /* Products */,
+				F91D03C523F5E458002A88A6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,11 +179,14 @@
 			children = (
 				F91D039523F5DB12002A88A6 /* AppDelegate.swift */,
 				F91D039723F5DB12002A88A6 /* SceneDelegate.swift */,
-				F91D039923F5DB12002A88A6 /* ViewController.swift */,
-				F91D039B23F5DB12002A88A6 /* Main.storyboard */,
+				F96C560B23F7439E00580AC2 /* NetworkProvider.swift */,
+				F96C560623F72CC600580AC2 /* Helper */,
+				F90B50F723F60FF600161684 /* UiKit Subclasses */,
+				F90B50F623F60FE500161684 /* Extensions */,
+				F91D039923F5DB12002A88A6 /* MainViewController.swift */,
 				F91D039E23F5DB12002A88A6 /* Assets.xcassets */,
-				F91D03A023F5DB12002A88A6 /* LaunchScreen.storyboard */,
 				F91D03A323F5DB12002A88A6 /* Info.plist */,
+				F90B50EA23F5F8FD00161684 /* Launch Screen.storyboard */,
 			);
 			path = "ios-postman";
 			sourceTree = "<group>";
@@ -128,6 +209,39 @@
 			path = "ios-postmanUITests";
 			sourceTree = "<group>";
 		};
+		F91D03C523F5E458002A88A6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F90B50E523F5F48300161684 /* ReactiveMapKit.framework */,
+				F90B50E223F5F48300161684 /* ReactiveSwift.framework */,
+				F90B50E323F5F48300161684 /* RxAtomic.framework */,
+				F90B50E423F5F48300161684 /* RxBlocking.framework */,
+				F90B50DF23F5F43C00161684 /* Differentiator.framework */,
+				F90B50DD23F5EA8300161684 /* RxRelay.framework */,
+				F91D03CC23F5E46C002A88A6 /* ReactiveCocoa.framework */,
+				F91D03C723F5E46C002A88A6 /* RxCocoa.framework */,
+				F91D03CB23F5E46C002A88A6 /* RxDataSources.framework */,
+				F91D03C823F5E46C002A88A6 /* RxSwift.framework */,
+				F91D03DE23F5E762002A88A6 /* RxCocoa.framework */,
+				F91D03DF23F5E762002A88A6 /* RxDataSources.framework */,
+				F91D03E023F5E762002A88A6 /* RxSwift.framework */,
+				F91D03CA23F5E46C002A88A6 /* SnapKit.framework */,
+				F91D03DB23F5E762002A88A6 /* ReactiveCocoa.framework */,
+				F91D03DC23F5E762002A88A6 /* RxTest.framework */,
+				F91D03DD23F5E762002A88A6 /* SnapKit.framework */,
+				F91D03C623F5E458002A88A6 /* ios-postman */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F96C560623F72CC600580AC2 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				F96C560723F72D0700580AC2 /* Either.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -136,6 +250,7 @@
 			buildConfigurationList = F91D03BC23F5DB13002A88A6 /* Build configuration list for PBXNativeTarget "ios-postman" */;
 			buildPhases = (
 				F91D038E23F5DB12002A88A6 /* Sources */,
+				F91D03DA23F5E493002A88A6 /* ShellScript */,
 				F91D038F23F5DB12002A88A6 /* Frameworks */,
 				F91D039023F5DB12002A88A6 /* Resources */,
 			);
@@ -232,9 +347,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F91D03A223F5DB12002A88A6 /* LaunchScreen.storyboard in Resources */,
 				F91D039F23F5DB12002A88A6 /* Assets.xcassets in Resources */,
-				F91D039D23F5DB12002A88A6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,6 +355,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F90B50EB23F5F8FD00161684 /* Launch Screen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,14 +368,45 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		F91D03DA23F5E493002A88A6 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"$(SRCROOT)/input.xcfilelist",
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+				"$(SRCROOT)/output.xcfilelist",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F91D038E23F5DB12002A88A6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F91D039A23F5DB12002A88A6 /* ViewController.swift in Sources */,
+				F90B50F923F6101B00161684 /* AppKeyValueView.swift in Sources */,
+				F96C560A23F7423200580AC2 /* String+Extension.swift in Sources */,
+				F91D039A23F5DB12002A88A6 /* MainViewController.swift in Sources */,
 				F91D039623F5DB12002A88A6 /* AppDelegate.swift in Sources */,
+				F96C560523F72C8B00580AC2 /* UIView+Extension.swift in Sources */,
+				F96C560C23F7439E00580AC2 /* NetworkProvider.swift in Sources */,
+				F96C560823F72D0700580AC2 /* Either.swift in Sources */,
+				F90B50FB23F62A8F00161684 /* AppKeyValuesStackView.swift in Sources */,
 				F91D039823F5DB12002A88A6 /* SceneDelegate.swift in Sources */,
+				F90B50FF23F72A9400161684 /* Observable+Extension.swift in Sources */,
+				F90B50EF23F6071200161684 /* AppTextField.swift in Sources */,
+				F90B50FD23F71ACA00161684 /* UIColor+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,25 +440,6 @@
 			targetProxy = F91D03B423F5DB13002A88A6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		F91D039B23F5DB12002A88A6 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F91D039C23F5DB12002A88A6 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		F91D03A023F5DB12002A88A6 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F91D03A123F5DB12002A88A6 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		F91D03BA23F5DB13002A88A6 /* Debug */ = {
@@ -436,6 +562,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = APD85H4NSR;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "ios-postman/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -454,6 +585,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = APD85H4NSR;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "ios-postman/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
