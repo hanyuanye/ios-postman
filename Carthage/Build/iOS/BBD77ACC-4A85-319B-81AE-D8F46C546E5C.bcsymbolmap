@@ -1,0 +1,237 @@
+BCSymbolMap Version: 2.0
+_$s7RxCocoa29SharedSequenceConvertibleTypeP0A8OptionalAD10Occupiable7ElementRpzrlE11filterEmptyAA0cD0Vy15SharingStrategyQzAGGyFAmGcfU_
+_$s7RxCocoa29SharedSequenceConvertibleTypeP0A8OptionalAD10Occupiable7ElementRpzrlE11filterEmptyAA0cD0Vy15SharingStrategyQzAGGyFAmGcfU_TA
+_$s7RxCocoa29SharedSequenceConvertibleTypeP0A8OptionalAD10Occupiable7ElementRpzrlE12catchOnEmptyyAA0cD0Vy15SharingStrategyQzAGGAMycFAmGcfU_
+_$s7RxCocoa29SharedSequenceConvertibleTypeP0A8OptionalAD10Occupiable7ElementRpzrlE12catchOnEmptyyAA0cD0Vy15SharingStrategyQzAGGAMycFAmGcfU_TA
+_$s7RxSwift14ObservableTypeP0A8OptionalAD10Occupiable7ElementRpzrlE12errorOnEmptyyAA0C0CyAGGs5Error_pFfA_
+_$s7RxSwift14ObservableTypeP0A8OptionalAD0eD07ElementRpzrlE10errorOnNilyAA0C0CyAF_7WrappedQZGs5Error_pFfA_
+__swift_FORCE_LOAD_$_swiftCompatibility50
+__swift_FORCE_LOAD_$_swiftCompatibilityDynamicReplacements
+_symbolic x
+_symbolic B0
+_symbolic 7RxCocoa14SharedSequenceVy15SharingStrategyAA0cD15ConvertibleTypePQz7Element0A5Swift010ObservablegH0PQzGIego_
+_$s10RxOptional0aB5ErrorOACs0C0AAWL
+__swift_FORCE_LOAD_$_swiftCompatibility50_$_RxOptional
+__swift_FORCE_LOAD_$_swiftCompatibilityDynamicReplacements_$_RxOptional
+___swift_reflection_version
+Apple clang version 11.0.0 (clang-1100.0.33.15)
+<swift-imported-modules>
+/Users/hanyuanye/Documents/ios-postman/Carthage/Checkouts/RxOptional
+Apple Swift version 5.1.3 (swiftlang-1100.0.282.1 clang-1100.0.33.15)
+/Users/hanyuanye/Documents/ios-postman/Carthage/Checkouts/RxOptional/Sources/RxOptional/SharedSequence+Occupiable.swift
+$s7RxSwift14ObservableTypeP0A8OptionalAD0eD07ElementRpzrlE10errorOnNilyAA0C0CyAF_7WrappedQZGs5Error_pFfA_
+Sources/RxOptional/Observable+Optional.swift
+$s10RxOptional0aB5ErrorOACs0C0AAWl
+<compiler-generated>
+$s7RxSwift14ObservableTypeP0A8OptionalAD10Occupiable7ElementRpzrlE12errorOnEmptyyAA0C0CyAGGs5Error_pFfA_
+Sources/RxOptional/Observable+Occupiable.swift
+$s7RxCocoa29SharedSequenceConvertibleTypeP0A8OptionalAD10Occupiable7ElementRpzrlE12catchOnEmptyyAA0cD0Vy15SharingStrategyQzAGGAMycFAmGcfU_TA
+objectdestroy.2
+$s7RxCocoa29SharedSequenceConvertibleTypeP0A8OptionalAD10Occupiable7ElementRpzrlE12catchOnEmptyyAA0cD0Vy15SharingStrategyQzAGGAMycFAmGcfU_
+catchOnEmpty
+$s7RxCocoa29SharedSequenceConvertibleTypeP0A8OptionalAD10Occupiable7ElementRpzrlE11filterEmptyAA0cD0Vy15SharingStrategyQzAGGyFAmGcfU_TA
+objectdestroy
+$s7RxCocoa29SharedSequenceConvertibleTypeP0A8OptionalAD10Occupiable7ElementRpzrlE11filterEmptyAA0cD0Vy15SharingStrategyQzAGGyFAmGcfU_
+filterEmpty
+_$s10RxOptional0aB5ErrorOs0C0AAsADP7_domainSSvgTW
+_$s10RxOptional0aB5ErrorOs0C0AAsADP5_codeSivgTW
+_$s10RxOptional0aB5ErrorOs0C0AAsADP9_userInfoyXlSgvgTW
+_$s10RxOptional0aB5ErrorOs0C0AAsADP19_getEmbeddedNSErroryXlSgyFTW
+_$s10RxOptional0aB5ErrorOs23CustomStringConvertibleAAsADP11descriptionSSvgTW
+___swift_memcpy8_8
+___swift_noop_void_return
+_$s10RxOptional0aB5ErrorOwet
+_$s10RxOptional0aB5ErrorOwst
+_$s10RxOptional0aB5ErrorOwug
+_$s10RxOptional0aB5ErrorOwup
+_$s10RxOptional0aB5ErrorOwui
+_$sypXpML
+_$s10RxOptional0aB5ErrorOWV
+_$s10RxOptionalMXM
+_$s10RxOptional0aB5ErrorOMf
+_symbolic _____ 10RxOptional0aB5ErrorO
+_$s10RxOptional0aB5ErrorOMB
+_symbolic ypXp
+_$s10RxOptional0aB5ErrorOMF
+/Users/hanyuanye/Documents/ios-postman/Carthage/Checkouts/RxOptional/Sources/RxOptional/RxOptionalError.swift
+$s10RxOptional0aB5ErrorOMa
+$s10RxOptional0aB5ErrorOwui
+$s10RxOptional0aB5ErrorOwup
+$s10RxOptional0aB5ErrorOwug
+$s10RxOptional0aB5ErrorOwst
+$s10RxOptional0aB5ErrorOwet
+__swift_noop_void_return
+__swift_memcpy8_8
+description.get
+_getEmbeddedNSError
+_userInfo.get
+_code.get
+_domain.get
+appendLiteral
+appendInterpolation
+$sSSs20TextOutputStreamablessAAP5write2toyqd__z_ts0aB6StreamRd__lFTWs26DefaultStringInterpolationV_Tg5
+$sypXpMa
+init
+_$s7RxCocoa29SharedSequenceConvertibleTypeP0A8OptionalAD0gF07ElementRpzrlE9filterNilAA0cD0Vy15SharingStrategyQzAF_7WrappedQZGyFAoGcfU_
+_$s7RxCocoa29SharedSequenceConvertibleTypeP0A8OptionalAD0gF07ElementRpzrlE9filterNilAA0cD0Vy15SharingStrategyQzAF_7WrappedQZGyFAoGcfU_TA
+_$s7RxCocoa29SharedSequenceConvertibleTypeP0A8OptionalAD0gF07ElementRpzrlE14replaceNilWithyAA0cD0Vy15SharingStrategyQzAF_7WrappedQZGANFAnGcfU_
+_$s7RxCocoa29SharedSequenceConvertibleTypeP0A8OptionalAD0gF07ElementRpzrlE14replaceNilWithyAA0cD0Vy15SharingStrategyQzAF_7WrappedQZGANFAnGcfU_TA
+_$s7RxCocoa29SharedSequenceConvertibleTypeP0A8OptionalAD0gF07ElementRpzrlE10catchOnNilyAA0cD0Vy15SharingStrategyQzAF_7WrappedQZGAOycFAoGcfU_
+_$s7RxCocoa29SharedSequenceConvertibleTypeP0A8OptionalAD0gF07ElementRpzrlE10catchOnNilyAA0cD0Vy15SharingStrategyQzAF_7WrappedQZGAOycFAoGcfU_TA
+_$s7Element7RxSwift25ObservableConvertibleTypeP_7Wrapped0B8Optional0hF0PQZSg0B5Cocoa014SharedSequenceeF0RzAfgARpzlWOh
+_symbolic 7Element7RxSwift25ObservableConvertibleTypeP_7Wrapped0B8Optional0hF0PQZz_x_0B5Cocoa014SharedSequenceeF0RzAfgaDRpzlXX
+_symbolic 7RxCocoa14SharedSequenceVy15SharingStrategyAA0cD15ConvertibleTypePQz7Element0A5Swift010ObservablegH0P_7Wrapped0A8Optional0mH0PQZGIego_
+/Users/hanyuanye/Documents/ios-postman/Carthage/Checkouts/RxOptional/Sources/RxOptional/SharedSequence+Optional.swift
+$s7Element7RxSwift25ObservableConvertibleTypeP_7Wrapped0B8Optional0hF0PQZSg0B5Cocoa014SharedSequenceeF0RzAfgARpzlWOh
+$s7RxCocoa29SharedSequenceConvertibleTypeP0A8OptionalAD0gF07ElementRpzrlE10catchOnNilyAA0cD0Vy15SharingStrategyQzAF_7WrappedQZGAOycFAoGcfU_TA
+objectdestroy.5
+$s7RxCocoa29SharedSequenceConvertibleTypeP0A8OptionalAD0gF07ElementRpzrlE10catchOnNilyAA0cD0Vy15SharingStrategyQzAF_7WrappedQZGAOycFAoGcfU_
+catchOnNil
+$s7RxCocoa29SharedSequenceConvertibleTypeP0A8OptionalAD0gF07ElementRpzrlE14replaceNilWithyAA0cD0Vy15SharingStrategyQzAF_7WrappedQZGANFAnGcfU_TA
+$s7RxCocoa29SharedSequenceConvertibleTypeP0A8OptionalAD0gF07ElementRpzrlE14replaceNilWithyAA0cD0Vy15SharingStrategyQzAF_7WrappedQZGANFAnGcfU_
+replaceNilWith
+$s7RxCocoa29SharedSequenceConvertibleTypeP0A8OptionalAD0gF07ElementRpzrlE9filterNilAA0cD0Vy15SharingStrategyQzAF_7WrappedQZGyFAoGcfU_TA
+$s7RxCocoa29SharedSequenceConvertibleTypeP0A8OptionalAD0gF07ElementRpzrlE9filterNilAA0cD0Vy15SharingStrategyQzAF_7WrappedQZGyFAoGcfU_
+filterNil
+_$sSS10RxOptional10OccupiableA2aBP7isEmptySbvgTW
+_$sSS10RxOptional10OccupiableA2aBP10isNotEmptySbvgTW
+_$sSayxG10RxOptional10OccupiableA2bCP7isEmptySbvgTW
+_$sSDyxq_G10RxOptional10OccupiableA2bCP7isEmptySbvgTW
+_$sSDyxq_G10RxOptional10OccupiableA2bCP10isNotEmptySbvgTW
+_$sShyxG10RxOptional10OccupiableA2bCP7isEmptySbvgTW
+_$sSayxG10RxOptional10OccupiableA2bCP10isNotEmptySbvgTW
+_$sShyxG10RxOptional10OccupiableA2bCP10isNotEmptySbvgTW
+_symbolic $s10RxOptional10OccupiableP
+_$s10RxOptional10Occupiable_pMF
+/Users/hanyuanye/Documents/ios-postman/Carthage/Checkouts/RxOptional/Sources/RxOptional/Occupiable.swift
+isEmpty.get
+isNotEmpty.get
+_$sxSglWOc
+_$sxSg10RxOptional0B4TypeA2bCP5value7WrappedQzSgvgTW
+_$sxSg10RxOptional0B4TypeABWp
+_symbolic $s10RxOptional0B4TypeP
+_$s10RxOptional0B4Type_pMF
+_symbolic Sq
+_$sxSg10RxOptional0B4TypeABMA
+/Users/hanyuanye/Documents/ios-postman/Carthage/Checkouts/RxOptional/Sources/RxOptional/OptionalType.swift
+value.get
+$sxSglWOc
+_$s7RxSwift14ObservableTypeP0A8OptionalAD10Occupiable7ElementRpzrlE11filterEmptyAA0C0CyAGGyFAkGcfU_
+_$s7RxSwift14ObservableTypeP0A8OptionalAD10Occupiable7ElementRpzrlE11filterEmptyAA0C0CyAGGyFAkGcfU_TA
+_$s7ElementQz7RxSwift10ObservableCyABGs5Error_pIegnozo_AbFsAG_pIegnrzo_AC0D4TypeRz0B8Optional10OccupiableABRQlTRTA
+_$s7RxSwift14ObservableTypeP0A8OptionalAD10Occupiable7ElementRpzrlE12catchOnEmptyyAA0C0CyAGGAKyKcFAkGKcfU_
+_$s7RxSwift14ObservableTypeP0A8OptionalAD10Occupiable7ElementRpzrlE12catchOnEmptyyAA0C0CyAGGAKyKcFAkGKcfU_TA
+_$s7RxSwift14ObservableTypeP0A8OptionalAD10Occupiable7ElementRpzrlE12errorOnEmptyyAA0C0CyAGGs5Error_pFA2GKcfU_TA
+_$s7ElementQz7RxSwift10ObservableCyABGs5Error_pIegnozo_AbFsAG_pIegnrzo_AC0D4TypeRz0B8Optional10OccupiableABRQlTRTA.10
+_symbolic 7Element7RxSwift25ObservableConvertibleTypePQzAB0D0CyAEGs5Error_pIegnozo_
+_symbolic 7RxSwift10ObservableCy7ElementAA0C15ConvertibleTypePQzGs5Error_pIegozo_
+_symbolic s5Error_p
+/Users/hanyuanye/Documents/ios-postman/Carthage/Checkouts/RxOptional/Sources/RxOptional/Observable+Occupiable.swift
+$s7RxSwift14ObservableTypeP0A8OptionalAD10Occupiable7ElementRpzrlE12errorOnEmptyyAA0C0CyAGGs5Error_pFA2GKcfU_TA
+$s7RxSwift14ObservableTypeP0A8OptionalAD10Occupiable7ElementRpzrlE12errorOnEmptyyAA0C0CyAGGs5Error_pFA2GKcfU_
+objectdestroy.12
+errorOnEmpty
+$s7RxSwift14ObservableTypeP0A8OptionalAD10Occupiable7ElementRpzrlE12catchOnEmptyyAA0C0CyAGGAKyKcFAkGKcfU_TA
+$s7RxSwift14ObservableTypeP0A8OptionalAD10Occupiable7ElementRpzrlE12catchOnEmptyyAA0C0CyAGGAKyKcFAkGKcfU_
+$s7ElementQz7RxSwift10ObservableCyABGs5Error_pIegnozo_AbFsAG_pIegnrzo_AC0D4TypeRz0B8Optional10OccupiableABRQlTRTA
+$s7ElementQz7RxSwift10ObservableCyABGs5Error_pIegnozo_AbFsAG_pIegnrzo_AC0D4TypeRz0B8Optional10OccupiableABRQlTR
+$s7RxSwift14ObservableTypeP0A8OptionalAD10Occupiable7ElementRpzrlE11filterEmptyAA0C0CyAGGyFAkGcfU_TA
+$s7RxSwift14ObservableTypeP0A8OptionalAD10Occupiable7ElementRpzrlE11filterEmptyAA0C0CyAGGyFAkGcfU_
+_$s7RxSwift14ObservableTypeP0A8OptionalAD0eD07ElementRpzrlE9filterNilAA0C0CyAF_7WrappedQZGyFAmGcfU_
+_$s7RxSwift14ObservableTypeP0A8OptionalAD0eD07ElementRpzrlE9filterNilAA0C0CyAF_7WrappedQZGyFAmGcfU_TA
+_$s7ElementQz7RxSwift10ObservableCyAA_7WrappedQZGs5Error_pIegnozo_AbHsAI_pIegnrzo_AC0D4TypeRz0B8Optional0hG0ABRQlTRTA
+_$s7RxSwift14ObservableTypeP0A8OptionalAD0eD07ElementRpzrlE013filterNilKeepE0AA0C0CyAGGyFSbAGcfU_
+_$s7RxSwift14ObservableTypeP0A8OptionalAD0eD07ElementRpzrlE013filterNilKeepE0AA0C0CyAGGyFSbAGcfU_TA
+_$s7RxSwift14ObservableTypeP0A8OptionalAD0eD07ElementRpzrlE10errorOnNilyAA0C0CyAF_7WrappedQZGs5Error_pFAlGKcfU_
+_$s7RxSwift14ObservableTypeP0A8OptionalAD0eD07ElementRpzrlE10errorOnNilyAA0C0CyAF_7WrappedQZGs5Error_pFAlGKcfU_TA
+_$s7RxSwift14ObservableTypeP0A8OptionalAD0eD07ElementRpzrlE14replaceNilWithyAA0C0CyAF_7WrappedQZGALFAlGcfU_
+_$s7RxSwift14ObservableTypeP0A8OptionalAD0eD07ElementRpzrlE14replaceNilWithyAA0C0CyAF_7WrappedQZGALFAlGcfU_TA
+_$s7RxSwift14ObservableTypeP0A8OptionalAD0eD07ElementRpzrlE10catchOnNilyAA0C0CyAF_7WrappedQZGAMyKcFAmGKcfU_
+_$s7RxSwift14ObservableTypeP0A8OptionalAD0eD07ElementRpzrlE10catchOnNilyAA0C0CyAF_7WrappedQZGAMyKcFAmGKcfU_TA
+_$s7Element7RxSwift25ObservableConvertibleTypeP_7Wrapped0B8Optional0hF0PQZSgAB0dF0RzAfgARpzlWOh
+_$s7Element7RxSwift25ObservableConvertibleTypeP_7Wrapped0B8Optional0hF0PQZSgAB0dF0RzAfgARpzlWOc
+_$s7ElementQz7RxSwift10ObservableCyAA_7WrappedQZGs5Error_pIegnozo_AbHsAI_pIegnrzo_AC0D4TypeRz0B8Optional0hG0ABRQlTRTA.19
+_symbolic 7Element7RxSwift25ObservableConvertibleTypePQzAB0D0CyAaD_7Wrapped0B8Optional0hF0PQZGs5Error_pIegnozo_
+_symbolic 7Element7RxSwift25ObservableConvertibleTypeP_7Wrapped0B8Optional0hF0PQZz_x_AB0dF0RzAfgaDRpzlXX
+_symbolic 7RxSwift10ObservableCy7ElementAA0C15ConvertibleTypeP_7Wrapped0A8Optional0hF0PQZGs5Error_pIegozo_
+/Users/hanyuanye/Documents/ios-postman/Carthage/Checkouts/RxOptional/Sources/RxOptional/Observable+Optional.swift
+$s7Element7RxSwift25ObservableConvertibleTypeP_7Wrapped0B8Optional0hF0PQZSgAB0dF0RzAfgARpzlWOc
+$s7Element7RxSwift25ObservableConvertibleTypeP_7Wrapped0B8Optional0hF0PQZSgAB0dF0RzAfgARpzlWOh
+$s7RxSwift14ObservableTypeP0A8OptionalAD0eD07ElementRpzrlE10catchOnNilyAA0C0CyAF_7WrappedQZGAMyKcFAmGKcfU_TA
+objectdestroy.14
+$s7RxSwift14ObservableTypeP0A8OptionalAD0eD07ElementRpzrlE10catchOnNilyAA0C0CyAF_7WrappedQZGAMyKcFAmGKcfU_
+$s7RxSwift14ObservableTypeP0A8OptionalAD0eD07ElementRpzrlE14replaceNilWithyAA0C0CyAF_7WrappedQZGALFAlGcfU_TA
+objectdestroy.11
+$s7RxSwift14ObservableTypeP0A8OptionalAD0eD07ElementRpzrlE14replaceNilWithyAA0C0CyAF_7WrappedQZGALFAlGcfU_
+$s7RxSwift14ObservableTypeP0A8OptionalAD0eD07ElementRpzrlE10errorOnNilyAA0C0CyAF_7WrappedQZGs5Error_pFAlGKcfU_TA
+objectdestroy.8
+$s7RxSwift14ObservableTypeP0A8OptionalAD0eD07ElementRpzrlE10errorOnNilyAA0C0CyAF_7WrappedQZGs5Error_pFAlGKcfU_
+errorOnNil
+$s7RxSwift14ObservableTypeP0A8OptionalAD0eD07ElementRpzrlE013filterNilKeepE0AA0C0CyAGGyFSbAGcfU_TA
+$s7RxSwift14ObservableTypeP0A8OptionalAD0eD07ElementRpzrlE013filterNilKeepE0AA0C0CyAGGyFSbAGcfU_
+filterNilKeepOptional
+$s7ElementQz7RxSwift10ObservableCyAA_7WrappedQZGs5Error_pIegnozo_AbHsAI_pIegnrzo_AC0D4TypeRz0B8Optional0hG0ABRQlTRTA
+$s7ElementQz7RxSwift10ObservableCyAA_7WrappedQZGs5Error_pIegnozo_AbHsAI_pIegnrzo_AC0D4TypeRz0B8Optional0hG0ABRQlTR
+$s7RxSwift14ObservableTypeP0A8OptionalAD0eD07ElementRpzrlE9filterNilAA0C0CyAF_7WrappedQZGyFAmGcfU_TA
+$s7RxSwift14ObservableTypeP0A8OptionalAD0eD07ElementRpzrlE9filterNilAA0C0CyAF_7WrappedQZGyFAmGcfU_
+Apple clang version 11.0.0 (clang-1100.0.33.17)
+/Users/hanyuanye/Library/Caches/org.carthage.CarthageKit/DerivedData/11.3.1_11C504/RxOptional/4.1.0/Build/Intermediates.noindex/ArchiveIntermediates/RxOptional iOS/IntermediateBuildFilesPath/RxOptional.build/Release-iphoneos/RxOptional iOS.build/DerivedSources/RxOptional_vers.c
+_swift_getFunctionReplacement50
+_swift_getOrigOfReplaceable50
+/BuildRoot/Library/Caches/com.apple.xbs/Binaries/swiftlang/install/TempContent/Objects/BNI_assert_lightweight/llvm-macosx-x86_64/bin/clang-11 --driver-mode=g++ -D CMARK_STATIC_DEFINE -D GTEST_HAS_RTTI=0 -D __STDC_CONSTANT_MACROS -D __STDC_FORMAT_MACROS -D __STDC_LIMIT_MACROS -I stdlib/toolchain/CompatibilityDynamicReplacements -I /BuildRoot/Library/Caches/com.apple.xbs/Sources/swiftlang/swiftlang-1100.0.282.1/swift/stdlib/toolchain/CompatibilityDynamicReplacements -I include -I /BuildRoot/Library/Caches/com.apple.xbs/Sources/swiftlang/swiftlang-1100.0.282.1/swift/include -I /BuildRoot/Library/Caches/com.apple.xbs/Sources/swiftlang/swiftlang-1100.0.282.1/llvm/include -I /BuildRoot/Library/Caches/com.apple.xbs/Binaries/swiftlang/install/TempContent/Objects/BNI_assert_lightweight/llvm-macosx-x86_64/include -I /BuildRoot/Library/Caches/com.apple.xbs/Sources/swiftlang/swiftlang-1100.0.282.1/llvm/tools/clang/include -I /BuildRoot/Library/Caches/com.apple.xbs/Binaries/swiftlang/install/TempContent/Objects/BNI_assert_lightweight/llvm-macosx-x86_64/tools/clang/include -I /BuildRoot/Library/Caches/com.apple.xbs/Sources/swiftlang/swiftlang-1100.0.282.1/cmark/src -I /BuildRoot/Library/Caches/com.apple.xbs/Binaries/swiftlang/install/TempContent/Objects/BNI_assert_lightweight/cmark-macosx-x86_64/src -Wno-unknown-warning-option -Werror=unguarded-availability-new -fno-stack-protector -fPIC -fvisibility-inlines-hidden -Werror=date-time -Werror=unguarded-availability-new -std=c++11 -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wmissing-field-initializers -Wimplicit-fallthrough -Wcovered-switch-default -Wno-class-memaccess -Wno-noexcept-type -Wnon-virtual-dtor -Wdelete-non-virtual-dtor -Wstring-conversion -fdiagnostics-color -Werror=switch -Wdocumentation -Wimplicit-fallthrough -Wunreachable-code -Woverloaded-virtual -D OBJC_OLD_DISPATCH_PROTOTYPES=0 -fno-sanitize=all -D LLVM_DISABLE_ABI_BREAKING_CHECKS_ENFORCING=1 -O2 -D NDEBUG -isysroot /BuildRoot/CrossTrain_SwiftOverlays/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -fno-exceptions -fno-rtti -Wall -Wglobal-constructors -Wexit-time-destructors -fvisibility=hidden -Wall -D SWIFT_TARGET_LIBRARY_NAME=swiftCompatibilityDynamicReplacements -fembed-bitcode=all --target=arm64-apple-ios7.0 -isysroot /BuildRoot/CrossTrain_SwiftOverlays/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.0.sdk -arch arm64 -F/BuildRoot/CrossTrain_SwiftOverlays/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.0.sdk/../../../Developer/Library/Frameworks -F/BuildRoot/CrossTrain_SwiftOverlays/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.0.sdk/../../../Developer/AppleInternal/Library/Frameworks -miphoneos-version-min=7.0 -O2 -g -D NDEBUG -MD -MT stdlib/toolchain/CompatibilityDynamicReplacements/CMakeFiles/swiftCompatibilityDynamicReplacements-iphoneos-arm64.dir/DynamicReplaceable.cpp.o -MF stdlib/toolchain/CompatibilityDynamicReplacements/CMakeFiles/swiftCompatibilityDynamicReplacements-iphoneos-arm64.dir/DynamicReplaceable.cpp.o.d -o stdlib/toolchain/CompatibilityDynamicReplacements/CMakeFiles/swiftCompatibilityDynamicReplacements-iphoneos-arm64.dir/DynamicReplaceable.cpp.o -c /BuildRoot/Library/Caches/com.apple.xbs/Sources/swiftlang/swiftlang-1100.0.282.1/swift/stdlib/toolchain/CompatibilityDynamicReplacements/DynamicReplaceable.cpp -Wno-framework-include-private-from-public -Wno-atimport-in-framework-header -Wno-extra-semi-stmt -Wno-quoted-include-in-framework-header -mlinker-version=512.4 -stdlib=libc++
+/BuildRoot/Library/Caches/com.apple.xbs/Sources/swiftlang/swiftlang-1100.0.282.1/swift/stdlib/toolchain/CompatibilityDynamicReplacements/DynamicReplaceable.cpp
+/BuildRoot/Library/Caches/com.apple.xbs/Binaries/swiftlang/install/TempContent/Objects/BNI_assert_lightweight/swift-macosx-x86_64
+swift_getOrigOfReplaceable50
+Sources/swiftlang/swiftlang-1100.0.282.1/swift/stdlib/toolchain/CompatibilityDynamicReplacements/DynamicReplaceable.cpp
+/BuildRoot/Library/Caches/com.apple.xbs
+swift_getFunctionReplacement50
+__ZN5swift17getRootSuperclassEv
+__ZN5swift34swift50override_conformsToProtocolEPKNS_14TargetMetadataINS_9InProcessEEEPKNS_24TargetProtocolDescriptorIS1_EEPFPKNS_18TargetWitnessTableIS1_EES4_S8_E
+__ZL24registerAddImageCallbackPv
+__ZZZN5swift17getRootSuperclassEvENK3$_0clEvENUlPvE_8__invokeES1_
+__ZL16addImageCallbackPK11mach_headerl
+__ZZN5swift34swift50override_conformsToProtocolEPKNS_14TargetMetadataINS_9InProcessEEEPKNS_24TargetProtocolDescriptorIS1_EEPFPKNS_18TargetWitnessTableIS1_EES4_S8_EE5token
+__ZZZN5swift17getRootSuperclassEvENK3$_0clEvE7TheLazy
+__ZL27ProtocolConformancesSection
+_DummyTargetContextDescriptor
+/BuildRoot/Library/Caches/com.apple.xbs/Binaries/swiftlang/install/TempContent/Objects/BNI_assert_lightweight/llvm-macosx-x86_64/bin/clang-11 --driver-mode=g++ -D CMARK_STATIC_DEFINE -D GTEST_HAS_RTTI=0 -D __STDC_CONSTANT_MACROS -D __STDC_FORMAT_MACROS -D __STDC_LIMIT_MACROS -I stdlib/toolchain/Compatibility50 -I /BuildRoot/Library/Caches/com.apple.xbs/Sources/swiftlang/swiftlang-1100.0.282.1/swift/stdlib/toolchain/Compatibility50 -I include -I /BuildRoot/Library/Caches/com.apple.xbs/Sources/swiftlang/swiftlang-1100.0.282.1/swift/include -I /BuildRoot/Library/Caches/com.apple.xbs/Sources/swiftlang/swiftlang-1100.0.282.1/llvm/include -I /BuildRoot/Library/Caches/com.apple.xbs/Binaries/swiftlang/install/TempContent/Objects/BNI_assert_lightweight/llvm-macosx-x86_64/include -I /BuildRoot/Library/Caches/com.apple.xbs/Sources/swiftlang/swiftlang-1100.0.282.1/llvm/tools/clang/include -I /BuildRoot/Library/Caches/com.apple.xbs/Binaries/swiftlang/install/TempContent/Objects/BNI_assert_lightweight/llvm-macosx-x86_64/tools/clang/include -I /BuildRoot/Library/Caches/com.apple.xbs/Sources/swiftlang/swiftlang-1100.0.282.1/cmark/src -I /BuildRoot/Library/Caches/com.apple.xbs/Binaries/swiftlang/install/TempContent/Objects/BNI_assert_lightweight/cmark-macosx-x86_64/src -Wno-unknown-warning-option -Werror=unguarded-availability-new -fno-stack-protector -fPIC -fvisibility-inlines-hidden -Werror=date-time -Werror=unguarded-availability-new -std=c++11 -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wmissing-field-initializers -Wimplicit-fallthrough -Wcovered-switch-default -Wno-class-memaccess -Wno-noexcept-type -Wnon-virtual-dtor -Wdelete-non-virtual-dtor -Wstring-conversion -fdiagnostics-color -Werror=switch -Wdocumentation -Wimplicit-fallthrough -Wunreachable-code -Woverloaded-virtual -D OBJC_OLD_DISPATCH_PROTOTYPES=0 -fno-sanitize=all -D LLVM_DISABLE_ABI_BREAKING_CHECKS_ENFORCING=1 -O2 -D NDEBUG -isysroot /BuildRoot/CrossTrain_SwiftOverlays/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -fno-exceptions -fno-rtti -Wall -Wglobal-constructors -Wexit-time-destructors -fvisibility=hidden -Wall -D SWIFT_TARGET_LIBRARY_NAME=swiftCompatibility50 -fembed-bitcode=all --target=arm64-apple-ios7.0 -isysroot /BuildRoot/CrossTrain_SwiftOverlays/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.0.sdk -arch arm64 -F/BuildRoot/CrossTrain_SwiftOverlays/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.0.sdk/../../../Developer/Library/Frameworks -F/BuildRoot/CrossTrain_SwiftOverlays/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.0.sdk/../../../Developer/AppleInternal/Library/Frameworks -miphoneos-version-min=7.0 -O2 -g -D NDEBUG -MD -MT stdlib/toolchain/Compatibility50/CMakeFiles/swiftCompatibility50-iphoneos-arm64.dir/ProtocolConformance.cpp.o -MF stdlib/toolchain/Compatibility50/CMakeFiles/swiftCompatibility50-iphoneos-arm64.dir/ProtocolConformance.cpp.o.d -o stdlib/toolchain/Compatibility50/CMakeFiles/swiftCompatibility50-iphoneos-arm64.dir/ProtocolConformance.cpp.o -c /BuildRoot/Library/Caches/com.apple.xbs/Sources/swiftlang/swiftlang-1100.0.282.1/swift/stdlib/toolchain/Compatibility50/ProtocolConformance.cpp -Wno-framework-include-private-from-public -Wno-atimport-in-framework-header -Wno-extra-semi-stmt -Wno-quoted-include-in-framework-header -mlinker-version=512.4 -stdlib=libc++
+/BuildRoot/Library/Caches/com.apple.xbs/Sources/swiftlang/swiftlang-1100.0.282.1/swift/stdlib/toolchain/Compatibility50/ProtocolConformance.cpp
+addImageCallback
+Sources/swiftlang/swiftlang-1100.0.282.1/swift/stdlib/toolchain/Compatibility50/ProtocolConformance.cpp
+_getTypeDescriptorLocation
+Sources/swiftlang/swiftlang-1100.0.282.1/swift/include/swift/ABI/Metadata.h
+get
+Sources/swiftlang/swiftlang-1100.0.282.1/swift/include/swift/Basic/RelativePointer.h
+getTypeKind
+getTypeReferenceKind
+Sources/swiftlang/swiftlang-1100.0.282.1/swift/include/swift/ABI/MetadataValues.h
+applyRelativeOffset<const swift::RelativeDirectPointerImpl<swift::TargetProtocolConformanceDescriptor<swift::InProcess>, false, int>, int>
+__invoke
+operator()
+registerAddImageCallback
+swift50override_conformsToProtocol
+_swift50override_class_getSuperclass
+getMetadataForClass
+Sources/swiftlang/swiftlang-1100.0.282.1/swift/stdlib/toolchain/Compatibility50/../../public/runtime/Private.h
+dyn_cast<swift::TargetForeignClassMetadata<swift::InProcess>, const swift::TargetMetadata<swift::InProcess> >
+Sources/swiftlang/swiftlang-1100.0.282.1/llvm/include/llvm/Support/Casting.h
+isa<swift::TargetForeignClassMetadata<swift::InProcess>, const swift::TargetMetadata<swift::InProcess> *>
+doit
+classof
+getKind
+getEnumeratedMetadataKind
+classHasSuperclass
+getClassObject
+CrossTrain_SwiftOverlays/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.0.sdk/usr/include/dispatch/once.h
+/BuildRoot
+getRootSuperclass
+Sources/swiftlang/swiftlang-1100.0.282.1/swift/include/swift/Basic/Lazy.h
+__ZL29installGetClassHook_untrustedv
+__ZL35getObjCClassByMangledName_untrustedPKcPP10objc_class
+_Overrides
+__ZL15OldGetClassHook
+/BuildRoot/Library/Caches/com.apple.xbs/Binaries/swiftlang/install/TempContent/Objects/BNI_assert_lightweight/llvm-macosx-x86_64/bin/clang-11 --driver-mode=g++ -D CMARK_STATIC_DEFINE -D GTEST_HAS_RTTI=0 -D __STDC_CONSTANT_MACROS -D __STDC_FORMAT_MACROS -D __STDC_LIMIT_MACROS -I stdlib/toolchain/Compatibility50 -I /BuildRoot/Library/Caches/com.apple.xbs/Sources/swiftlang/swiftlang-1100.0.282.1/swift/stdlib/toolchain/Compatibility50 -I include -I /BuildRoot/Library/Caches/com.apple.xbs/Sources/swiftlang/swiftlang-1100.0.282.1/swift/include -I /BuildRoot/Library/Caches/com.apple.xbs/Sources/swiftlang/swiftlang-1100.0.282.1/llvm/include -I /BuildRoot/Library/Caches/com.apple.xbs/Binaries/swiftlang/install/TempContent/Objects/BNI_assert_lightweight/llvm-macosx-x86_64/include -I /BuildRoot/Library/Caches/com.apple.xbs/Sources/swiftlang/swiftlang-1100.0.282.1/llvm/tools/clang/include -I /BuildRoot/Library/Caches/com.apple.xbs/Binaries/swiftlang/install/TempContent/Objects/BNI_assert_lightweight/llvm-macosx-x86_64/tools/clang/include -I /BuildRoot/Library/Caches/com.apple.xbs/Sources/swiftlang/swiftlang-1100.0.282.1/cmark/src -I /BuildRoot/Library/Caches/com.apple.xbs/Binaries/swiftlang/install/TempContent/Objects/BNI_assert_lightweight/cmark-macosx-x86_64/src -Wno-unknown-warning-option -Werror=unguarded-availability-new -fno-stack-protector -fPIC -fvisibility-inlines-hidden -Werror=date-time -Werror=unguarded-availability-new -std=c++11 -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wmissing-field-initializers -Wimplicit-fallthrough -Wcovered-switch-default -Wno-class-memaccess -Wno-noexcept-type -Wnon-virtual-dtor -Wdelete-non-virtual-dtor -Wstring-conversion -fdiagnostics-color -Werror=switch -Wdocumentation -Wimplicit-fallthrough -Wunreachable-code -Woverloaded-virtual -D OBJC_OLD_DISPATCH_PROTOTYPES=0 -fno-sanitize=all -D LLVM_DISABLE_ABI_BREAKING_CHECKS_ENFORCING=1 -O2 -D NDEBUG -isysroot /BuildRoot/CrossTrain_SwiftOverlays/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -fno-exceptions -fno-rtti -Wall -Wglobal-constructors -Wexit-time-destructors -fvisibility=hidden -Wall -D SWIFT_TARGET_LIBRARY_NAME=swiftCompatibility50 -fembed-bitcode=all --target=arm64-apple-ios7.0 -isysroot /BuildRoot/CrossTrain_SwiftOverlays/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.0.sdk -arch arm64 -F/BuildRoot/CrossTrain_SwiftOverlays/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.0.sdk/../../../Developer/Library/Frameworks -F/BuildRoot/CrossTrain_SwiftOverlays/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.0.sdk/../../../Developer/AppleInternal/Library/Frameworks -miphoneos-version-min=7.0 -O2 -g -D NDEBUG -MD -MT stdlib/toolchain/Compatibility50/CMakeFiles/swiftCompatibility50-iphoneos-arm64.dir/Overrides.cpp.o -MF stdlib/toolchain/Compatibility50/CMakeFiles/swiftCompatibility50-iphoneos-arm64.dir/Overrides.cpp.o.d -o stdlib/toolchain/Compatibility50/CMakeFiles/swiftCompatibility50-iphoneos-arm64.dir/Overrides.cpp.o -c /BuildRoot/Library/Caches/com.apple.xbs/Sources/swiftlang/swiftlang-1100.0.282.1/swift/stdlib/toolchain/Compatibility50/Overrides.cpp -Wno-framework-include-private-from-public -Wno-atimport-in-framework-header -Wno-extra-semi-stmt -Wno-quoted-include-in-framework-header -mlinker-version=512.4 -stdlib=libc++
+/BuildRoot/Library/Caches/com.apple.xbs/Sources/swiftlang/swiftlang-1100.0.282.1/swift/stdlib/toolchain/Compatibility50/Overrides.cpp
+getObjCClassByMangledName_untrusted
+Sources/swiftlang/swiftlang-1100.0.282.1/swift/stdlib/toolchain/Compatibility50/Overrides.cpp
+installGetClassHook_untrusted

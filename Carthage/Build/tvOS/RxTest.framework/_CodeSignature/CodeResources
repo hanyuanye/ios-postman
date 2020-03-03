@@ -6,27 +6,27 @@
 	<dict>
 		<key>Headers/RxTest-Swift.h</key>
 		<data>
-		/lrj0zN/sMUtriSiseFrPpTLDbs=
+		WEIl96Ct4yE2MBVkFMjCSuwmIHo=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		W61PMGTw0cIULj6NKf6M+0EMQSM=
+		aqv4STSVMdJ3yB3H9Xyy6RDy7dU=
 		</data>
 		<key>Modules/RxTest.swiftmodule/x86_64-apple-tvos-simulator.swiftdoc</key>
 		<data>
-		6X5RVwW/mY1u5y5GbcqsVv4Oa6M=
+		qdOU+TN5eSmJbYCr8TvSaRtkymM=
 		</data>
 		<key>Modules/RxTest.swiftmodule/x86_64-apple-tvos-simulator.swiftmodule</key>
 		<data>
-		l+9Ep2ByHM/HVxg8+l8qDoNCU64=
+		Ss9D3gr8AZMI0CD4nKzJozwnSgc=
 		</data>
 		<key>Modules/RxTest.swiftmodule/x86_64.swiftdoc</key>
 		<data>
-		6X5RVwW/mY1u5y5GbcqsVv4Oa6M=
+		qdOU+TN5eSmJbYCr8TvSaRtkymM=
 		</data>
 		<key>Modules/RxTest.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		l+9Ep2ByHM/HVxg8+l8qDoNCU64=
+		Ss9D3gr8AZMI0CD4nKzJozwnSgc=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -39,55 +39,55 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			/lrj0zN/sMUtriSiseFrPpTLDbs=
+			WEIl96Ct4yE2MBVkFMjCSuwmIHo=
 			</data>
 			<key>hash2</key>
 			<data>
-			2j4NsZrQnuShjk6+Ba/01x0kclZWzAmXoElnZg5Fh3E=
+			4mgALylp3z1Kray89fW2NO964KVm/llXrbWZ/SdSUZs=
 			</data>
 		</dict>
 		<key>Modules/RxTest.swiftmodule/x86_64-apple-tvos-simulator.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			6X5RVwW/mY1u5y5GbcqsVv4Oa6M=
+			qdOU+TN5eSmJbYCr8TvSaRtkymM=
 			</data>
 			<key>hash2</key>
 			<data>
-			P7axsnUMbQsx5E9tbCwVSVnPRF/kLPDLwhR2xv1rgMI=
+			GBrngiuZrAJE/9HipZr09Phh2vjM4fTxZ4QY+rKzyk8=
 			</data>
 		</dict>
 		<key>Modules/RxTest.swiftmodule/x86_64-apple-tvos-simulator.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			l+9Ep2ByHM/HVxg8+l8qDoNCU64=
+			Ss9D3gr8AZMI0CD4nKzJozwnSgc=
 			</data>
 			<key>hash2</key>
 			<data>
-			7coDB7DQj8lCJJYWO0DWMEfzP9XoXjCdNd79xbGn8eA=
+			cP64aVZ6suKW+zRvFG1fCPTqUvIwGCP+e6nhTpC0RWQ=
 			</data>
 		</dict>
 		<key>Modules/RxTest.swiftmodule/x86_64.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			6X5RVwW/mY1u5y5GbcqsVv4Oa6M=
+			qdOU+TN5eSmJbYCr8TvSaRtkymM=
 			</data>
 			<key>hash2</key>
 			<data>
-			P7axsnUMbQsx5E9tbCwVSVnPRF/kLPDLwhR2xv1rgMI=
+			GBrngiuZrAJE/9HipZr09Phh2vjM4fTxZ4QY+rKzyk8=
 			</data>
 		</dict>
 		<key>Modules/RxTest.swiftmodule/x86_64.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			l+9Ep2ByHM/HVxg8+l8qDoNCU64=
+			Ss9D3gr8AZMI0CD4nKzJozwnSgc=
 			</data>
 			<key>hash2</key>
 			<data>
-			7coDB7DQj8lCJJYWO0DWMEfzP9XoXjCdNd79xbGn8eA=
+			cP64aVZ6suKW+zRvFG1fCPTqUvIwGCP+e6nhTpC0RWQ=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

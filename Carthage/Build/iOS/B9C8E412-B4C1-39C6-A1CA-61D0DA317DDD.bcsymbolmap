@@ -964,8 +964,8 @@ $s14Differentiator8ItemPathVACSQAAWl
 itemIndex.get
 sectionIndex.get
 /Users/hanyuanye/Documents/ios-postman/Carthage/Checkouts/RxDataSources/Sources/Differentiator/AnimatableSectionModelType+ItemPath.swift
-Apple clang version 11.0.0 (clang-1100.0.33.16)
-/Users/hanyuanye/Library/Caches/org.carthage.CarthageKit/DerivedData/11.3_11C29/RxDataSources/4.0.1/Build/Intermediates.noindex/ArchiveIntermediates/Differentiator/IntermediateBuildFilesPath/RxDataSources.build/Release-iphoneos/Differentiator.build/DerivedSources/Differentiator_vers.c
+Apple clang version 11.0.0 (clang-1100.0.33.17)
+/Users/hanyuanye/Library/Caches/org.carthage.CarthageKit/DerivedData/11.3.1_11C504/RxDataSources/4.0.1/Build/Intermediates.noindex/ArchiveIntermediates/Differentiator/IntermediateBuildFilesPath/RxDataSources.build/Release-iphoneos/Differentiator.build/DerivedSources/Differentiator_vers.c
 __ZL15__ARCLite__loadv
 __ZL30add_image_hook_autoreleasepoolPK11mach_headerl
 __ZL34__arclite_objc_autoreleasePoolPushv

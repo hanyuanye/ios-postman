@@ -7,11 +7,18 @@
 
 import Foundation
 import RxSwift
+import RxOptional
+
+var scheduler = MainScheduler.instance
 
 extension ObservableType {
     public func filterMap<T>(_ transform: @escaping (Element) -> T?) -> Observable<T> {
-        return map(transform)
-            .filter { $0 != nil }
-            .map { $0! }
+        map(transform).filterNil()
+    }
+    
+    public func bindOnMain(onNext: @escaping (E) -> Void) -> Disposable {
+        return self
+            .observeOn(scheduler)
+            .bind(onNext: onNext)
     }
 }

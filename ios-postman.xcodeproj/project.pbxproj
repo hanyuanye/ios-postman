@@ -30,6 +30,9 @@
 		F91D03E723F5E763002A88A6 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F91D03DE23F5E762002A88A6 /* RxCocoa.framework */; };
 		F91D03E923F5E763002A88A6 /* RxDataSources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F91D03DF23F5E762002A88A6 /* RxDataSources.framework */; };
 		F91D03EB23F5E763002A88A6 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F91D03E023F5E762002A88A6 /* RxSwift.framework */; };
+		F9363647240E059A0084D0A5 /* RxOptional.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9363646240E059A0084D0A5 /* RxOptional.framework */; };
+		F936364C240E087C0084D0A5 /* ResponseParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F936364B240E087C0084D0A5 /* ResponseParser.swift */; };
+		F936364E240E0DF10084D0A5 /* ResponseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F936364D240E0DF10084D0A5 /* ResponseViewController.swift */; };
 		F96C560523F72C8B00580AC2 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96C560423F72C8B00580AC2 /* UIView+Extension.swift */; };
 		F96C560823F72D0700580AC2 /* Either.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96C560723F72D0700580AC2 /* Either.swift */; };
 		F96C560A23F7423200580AC2 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96C560923F7423100580AC2 /* String+Extension.swift */; };
@@ -52,6 +55,19 @@
 			remoteInfo = "ios-postman";
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F9363649240E059A0084D0A5 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		F90B50DD23F5EA8300161684 /* RxRelay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxRelay.framework; path = Carthage/Build/iOS/RxRelay.framework; sourceTree = "<group>"; };
@@ -90,6 +106,10 @@
 		F91D03DE23F5E762002A88A6 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		F91D03DF23F5E762002A88A6 /* RxDataSources.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxDataSources.framework; path = Carthage/Build/iOS/RxDataSources.framework; sourceTree = "<group>"; };
 		F91D03E023F5E762002A88A6 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		F9363645240DFD4B0084D0A5 /* RxOptional */ = {isa = PBXFileReference; lastKnownFileType = folder; name = RxOptional; path = Carthage/Checkouts/RxOptional; sourceTree = "<group>"; };
+		F9363646240E059A0084D0A5 /* RxOptional.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxOptional.framework; path = Carthage/Build/iOS/RxOptional.framework; sourceTree = "<group>"; };
+		F936364B240E087C0084D0A5 /* ResponseParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseParser.swift; sourceTree = "<group>"; };
+		F936364D240E0DF10084D0A5 /* ResponseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseViewController.swift; sourceTree = "<group>"; };
 		F96C560423F72C8B00580AC2 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIView+Extension.swift"; path = "/Users/hanyuanye/Documents/ios-postman/ios-postman/Extensions/UIView+Extension.swift"; sourceTree = "<absolute>"; };
 		F96C560723F72D0700580AC2 /* Either.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Either.swift; sourceTree = "<group>"; };
 		F96C560923F7423100580AC2 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "String+Extension.swift"; path = "/Users/hanyuanye/Documents/ios-postman/ios-postman/Extensions/String+Extension.swift"; sourceTree = "<absolute>"; };
@@ -105,6 +125,7 @@
 				F90B50E723F5F48300161684 /* RxAtomic.framework in Frameworks */,
 				F90B50E823F5F48300161684 /* RxBlocking.framework in Frameworks */,
 				F90B50E923F5F48300161684 /* ReactiveMapKit.framework in Frameworks */,
+				F9363647240E059A0084D0A5 /* RxOptional.framework in Frameworks */,
 				F90B50E023F5F43C00161684 /* Differentiator.framework in Frameworks */,
 				F90B50DE23F5EA8300161684 /* RxRelay.framework in Frameworks */,
 				F91D03E723F5E763002A88A6 /* RxCocoa.framework in Frameworks */,
@@ -180,10 +201,12 @@
 				F91D039523F5DB12002A88A6 /* AppDelegate.swift */,
 				F91D039723F5DB12002A88A6 /* SceneDelegate.swift */,
 				F96C560B23F7439E00580AC2 /* NetworkProvider.swift */,
+				F936364A240E08600084D0A5 /* NetworkLayer */,
 				F96C560623F72CC600580AC2 /* Helper */,
 				F90B50F723F60FF600161684 /* UiKit Subclasses */,
 				F90B50F623F60FE500161684 /* Extensions */,
 				F91D039923F5DB12002A88A6 /* MainViewController.swift */,
+				F936364D240E0DF10084D0A5 /* ResponseViewController.swift */,
 				F91D039E23F5DB12002A88A6 /* Assets.xcassets */,
 				F91D03A323F5DB12002A88A6 /* Info.plist */,
 				F90B50EA23F5F8FD00161684 /* Launch Screen.storyboard */,
@@ -212,6 +235,8 @@
 		F91D03C523F5E458002A88A6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F9363646240E059A0084D0A5 /* RxOptional.framework */,
+				F9363645240DFD4B0084D0A5 /* RxOptional */,
 				F90B50E523F5F48300161684 /* ReactiveMapKit.framework */,
 				F90B50E223F5F48300161684 /* ReactiveSwift.framework */,
 				F90B50E323F5F48300161684 /* RxAtomic.framework */,
@@ -234,6 +259,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F936364A240E08600084D0A5 /* NetworkLayer */ = {
+			isa = PBXGroup;
+			children = (
+				F936364B240E087C0084D0A5 /* ResponseParser.swift */,
+			);
+			path = NetworkLayer;
+			sourceTree = "<group>";
+		};
 		F96C560623F72CC600580AC2 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
@@ -253,6 +286,7 @@
 				F91D03DA23F5E493002A88A6 /* ShellScript */,
 				F91D038F23F5DB12002A88A6 /* Frameworks */,
 				F91D039023F5DB12002A88A6 /* Resources */,
+				F9363649240E059A0084D0A5 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -407,6 +441,8 @@
 				F90B50FF23F72A9400161684 /* Observable+Extension.swift in Sources */,
 				F90B50EF23F6071200161684 /* AppTextField.swift in Sources */,
 				F90B50FD23F71ACA00161684 /* UIColor+Extension.swift in Sources */,
+				F936364C240E087C0084D0A5 /* ResponseParser.swift in Sources */,
+				F936364E240E0DF10084D0A5 /* ResponseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

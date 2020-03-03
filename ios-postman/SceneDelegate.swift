@@ -10,10 +10,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         self.window = UIWindow(windowScene: windowScene)
         let nc = UINavigationController()
+        
+        nc.navigationBar.barTintColor = .black
         let vc = MainViewController()
         nc.addChild(vc)
         
-        self.window?.rootViewController = vc
+        self.window?.rootViewController = nc
         self.window?.makeKeyAndVisible()
     }
 

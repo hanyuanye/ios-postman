@@ -1,0 +1,31 @@
+{
+  "Mac" : [
+    {
+      "name" : "RxOptional",
+      "hash" : "fcd73e26f3cdac1eeff1202ee41bb0f6451d60a8101a08db56798af34bb91d8a",
+      "swiftToolchainVersion" : "5.1.3 (swiftlang-1100.0.282.1 clang-1100.0.33.15)"
+    }
+  ],
+  "watchOS" : [
+    {
+      "name" : "RxOptional",
+      "hash" : "e28ce1aa47af91619ed8fb823598b7a743465af0511f7912dbfb63a5ef919c7d",
+      "swiftToolchainVersion" : "5.1.3 (swiftlang-1100.0.282.1 clang-1100.0.33.15)"
+    }
+  ],
+  "tvOS" : [
+    {
+      "name" : "RxOptional",
+      "hash" : "002347c37e528335b90b782c9f7a9e9401e685015f0684bba0e935f620bedf5e",
+      "swiftToolchainVersion" : "5.1.3 (swiftlang-1100.0.282.1 clang-1100.0.33.15)"
+    }
+  ],
+  "commitish" : "4.1.0",
+  "iOS" : [
+    {
+      "name" : "RxOptional",
+      "hash" : "54e30d4861f55d10f5bda0b4cda30046f84e39258d3c132431d06b73de1740a6",
+      "swiftToolchainVersion" : "5.1.3 (swiftlang-1100.0.282.1 clang-1100.0.33.15)"
+    }
+  ]
+}

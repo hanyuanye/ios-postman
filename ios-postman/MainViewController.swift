@@ -12,7 +12,7 @@ func MainViewModel(
     queryParams: Observable<[(String, String)]>,
     headers: Observable<[(String, String)]>,
     method: Observable<HTTPMethods>
-) -> (Observable<Either<Data, Error>>){
+) -> (Observable<NSAttributedString>){
     
     let request = Observable
         .combineLatest(baseURL, queryParams, headers, method)
@@ -44,6 +44,17 @@ func MainViewModel(
     let response = sendRequest
         .withLatestFrom(request)
         .flatMapLatest { NetworkProvider.performRequest($0) }
+        .filterMap { response -> NSAttributedString? in
+            if let error = response.right {
+                return NSAttributedString(string: error.localizedDescription)
+            }
+            else if let data = response.left{
+                return data.response
+            }
+            else {
+                return nil
+            }
+        }
     
     return response
 }
@@ -56,7 +67,7 @@ class MainViewController: UIViewController {
         let button = UIButton()
         
         button.contentEdgeInsets = .init(top: 5, left: 10, bottom: 5, right: 10)
-        button.setTitle("GET", for: .normal)
+        button.setTitle(HTTPMethods.get.rawValue, for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.backgroundColor = .appButtonColor
         
@@ -175,13 +186,15 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationController?.title = "Request"
+        
         view.addSubview(contentStackView)
         view.backgroundColor = .black
         
         contentStackView.snp.makeConstraints { (make) in
             make.leading.equalToSuperview().offset(20)
             make.trailing.equalToSuperview().offset(-20)
-            make.top.equalToSuperview().offset(50)
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(20)
         }
         
         let (response) = MainViewModel(
@@ -192,15 +205,16 @@ class MainViewController: UIViewController {
             method: .just(.get))
 
         self.disposeBag.insert(
-            response.subscribe(onNext: { (response) in
-                if let response = response.left {
-                    print(String(data: response, encoding: .ascii))
-                }
-                else if let error = response.right {
-                    print(error.localizedDescription)
-                }
+            response.bindOnMain(onNext: { [weak self] (response) in
+                guard let self = self else { return }
+                self.presentResponseViewController(response)
             })
         )
+    }
+    
+    func presentResponseViewController(_ responseText: NSAttributedString) {
+        let vc = ResponseViewController(responseText: responseText)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 

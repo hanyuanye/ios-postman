@@ -9,3 +9,4 @@ $(SRCROOT)/Carthage/Build/iOS/RxAtomic.framework
 $(SRCROOT)/Carthage/Build/iOS/RxBlocking.framework
 $(SRCROOT)/Carthage/Build/iOS/ReactiveMapKit.framework
 $(SRCROOT)/Carthage/Build/iOS/ReactiveSwift.framework
+$(SRCROOT)/Carthage/Build/iOS/RxOptional.framework
