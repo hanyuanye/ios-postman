@@ -18,7 +18,14 @@ class ResponseViewController: UIViewController {
         label.attributedText = self.responseText
         label.font = .systemFont(ofSize: 20)
         label.textColor = .white
+        label.numberOfLines = 0
         return label
+    }()
+    
+    private lazy var scrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        
+        return scrollView
     }()
     
     init(responseText: NSAttributedString) {
@@ -33,11 +40,28 @@ class ResponseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.addSubview(responseLabel)
+        view.addSubview(scrollView)
+        scrollView.addSubview(responseLabel)
         
-        responseLabel.snp.makeConstraints { (make) in
+        navigationItem.title = "Response"
+        
+        let backButton = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(close))
+        navigationItem.leftBarButtonItem = backButton
+        
+        scrollView.snp.makeConstraints { (make) in
             make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(10)
             make.leading.equalToSuperview().offset(10)
+            make.trailing.equalToSuperview().offset(-10)
+            make.bottom.equalToSuperview()
         }
+        
+        responseLabel.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
+            make.width.equalToSuperview()
+        }
+    }
+    
+    @objc func close() {
+        navigationController?.popViewController(animated: true)
     }
 }

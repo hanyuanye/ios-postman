@@ -8,8 +8,22 @@
 
 import Foundation
 
+let ResponseParser = ResponseParserManager()
+
+struct ResponseParserManager {
+    var html: (Data) -> NSAttributedString?
+    var json: (Data) -> NSAttributedString?
+    var response: (Data) -> NSAttributedString?
+    
+    init() {
+        html = { $0.html }
+        json = { $0.json }
+        response = { $0.response }
+    }
+}
+
 extension Data {
-    public var html: NSAttributedString? {
+    fileprivate var html: NSAttributedString? {
         try? NSAttributedString(
             data: self,
             options: [.documentType: NSAttributedString.DocumentType.html,
@@ -17,19 +31,21 @@ extension Data {
             documentAttributes: nil)
     }
     
-    public var json: NSAttributedString? {
+    fileprivate var json: NSAttributedString? {
         guard let object = try? JSONSerialization.jsonObject(with: self, options: []),
-              let data = try? JSONSerialization.data(withJSONObject: object, options: []),
+              let data = try? JSONSerialization.data(withJSONObject: object, options: [.prettyPrinted]),
               let prettyPrintedString = String(data: data, encoding: .utf8) else {
             return nil
         }
         
+        print(prettyPrintedString)
+        
         return NSAttributedString(string: prettyPrintedString)
     }
     
-    public var response: NSAttributedString {
-        if let html = html { return html }
+    fileprivate var response: NSAttributedString {
         if let json = json { return json }
+        if let html = html { return html }
         
         return NSAttributedString()
     }

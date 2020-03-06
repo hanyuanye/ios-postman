@@ -2,8 +2,14 @@ import UIKit
 import SnapKit
 import RxSwift
 
-enum HTTPMethods: String {
+enum HTTPMethods: String, Codable {
     case get = "GET"
+}
+
+enum Auth: String, Codable {
+    case basic
+    case oauth1
+    case oauth2
 }
 
 func MainViewModel(
@@ -16,6 +22,9 @@ func MainViewModel(
     
     let request = Observable
         .combineLatest(baseURL, queryParams, headers, method)
+    
+    let response = sendRequest
+        .withLatestFrom(request)
         .map { arg -> URLRequest? in
             let baseURL = arg.0.replacingOccurrences(of: "http://", with: "")
             let queryParams = arg.1
@@ -40,16 +49,13 @@ func MainViewModel(
             
             return request
         }
-    
-    let response = sendRequest
-        .withLatestFrom(request)
         .flatMapLatest { NetworkProvider.performRequest($0) }
         .filterMap { response -> NSAttributedString? in
             if let error = response.right {
                 return NSAttributedString(string: error.localizedDescription)
             }
             else if let data = response.left{
-                return data.response
+                return ResponseParser.response(data)
             }
             else {
                 return nil
@@ -186,7 +192,13 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationController?.title = "Request"
+        navigationItem.title = "Request"
+        navigationController?.navigationBar.titleTextAttributes = [
+            NSAttributedString.Key.foregroundColor: UIColor.white
+        ]
+        
+        let backButton = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(close))
+        navigationItem.leftBarButtonItem = backButton
         
         view.addSubview(contentStackView)
         view.backgroundColor = .black
@@ -206,10 +218,13 @@ class MainViewController: UIViewController {
 
         self.disposeBag.insert(
             response.bindOnMain(onNext: { [weak self] (response) in
-                guard let self = self else { return }
-                self.presentResponseViewController(response)
+                self?.presentResponseViewController(response)
             })
         )
+    }
+    
+    @objc func close() {
+        navigationController?.popViewController(animated: true)
     }
     
     func presentResponseViewController(_ responseText: NSAttributedString) {

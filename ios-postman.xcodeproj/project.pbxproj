@@ -37,6 +37,10 @@
 		F96C560823F72D0700580AC2 /* Either.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96C560723F72D0700580AC2 /* Either.swift */; };
 		F96C560A23F7423200580AC2 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96C560923F7423100580AC2 /* String+Extension.swift */; };
 		F96C560C23F7439E00580AC2 /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96C560B23F7439E00580AC2 /* NetworkProvider.swift */; };
+		F9DB667124130A800069DDCB /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DB667024130A800069DDCB /* Environment.swift */; };
+		F9DB667324130B610069DDCB /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DB667224130B610069DDCB /* Collection.swift */; };
+		F9DB667524130B870069DDCB /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DB667424130B870069DDCB /* Request.swift */; };
+		F9DB667824130F390069DDCB /* FileProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DB667724130F390069DDCB /* FileProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +118,10 @@
 		F96C560723F72D0700580AC2 /* Either.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Either.swift; sourceTree = "<group>"; };
 		F96C560923F7423100580AC2 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "String+Extension.swift"; path = "/Users/hanyuanye/Documents/ios-postman/ios-postman/Extensions/String+Extension.swift"; sourceTree = "<absolute>"; };
 		F96C560B23F7439E00580AC2 /* NetworkProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
+		F9DB667024130A800069DDCB /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		F9DB667224130B610069DDCB /* Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
+		F9DB667424130B870069DDCB /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		F9DB667724130F390069DDCB /* FileProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,8 +208,9 @@
 			children = (
 				F91D039523F5DB12002A88A6 /* AppDelegate.swift */,
 				F91D039723F5DB12002A88A6 /* SceneDelegate.swift */,
-				F96C560B23F7439E00580AC2 /* NetworkProvider.swift */,
+				F9DB667624130EB10069DDCB /* FileLayer */,
 				F936364A240E08600084D0A5 /* NetworkLayer */,
+				F9DB666F24130A300069DDCB /* Model */,
 				F96C560623F72CC600580AC2 /* Helper */,
 				F90B50F723F60FF600161684 /* UiKit Subclasses */,
 				F90B50F623F60FE500161684 /* Extensions */,
@@ -262,6 +271,7 @@
 		F936364A240E08600084D0A5 /* NetworkLayer */ = {
 			isa = PBXGroup;
 			children = (
+				F96C560B23F7439E00580AC2 /* NetworkProvider.swift */,
 				F936364B240E087C0084D0A5 /* ResponseParser.swift */,
 			);
 			path = NetworkLayer;
@@ -273,6 +283,24 @@
 				F96C560723F72D0700580AC2 /* Either.swift */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		F9DB666F24130A300069DDCB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F9DB667024130A800069DDCB /* Environment.swift */,
+				F9DB667224130B610069DDCB /* Collection.swift */,
+				F9DB667424130B870069DDCB /* Request.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F9DB667624130EB10069DDCB /* FileLayer */ = {
+			isa = PBXGroup;
+			children = (
+				F9DB667724130F390069DDCB /* FileProvider.swift */,
+			);
+			path = FileLayer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -433,13 +461,17 @@
 				F96C560A23F7423200580AC2 /* String+Extension.swift in Sources */,
 				F91D039A23F5DB12002A88A6 /* MainViewController.swift in Sources */,
 				F91D039623F5DB12002A88A6 /* AppDelegate.swift in Sources */,
+				F9DB667124130A800069DDCB /* Environment.swift in Sources */,
 				F96C560523F72C8B00580AC2 /* UIView+Extension.swift in Sources */,
 				F96C560C23F7439E00580AC2 /* NetworkProvider.swift in Sources */,
+				F9DB667524130B870069DDCB /* Request.swift in Sources */,
+				F9DB667324130B610069DDCB /* Collection.swift in Sources */,
 				F96C560823F72D0700580AC2 /* Either.swift in Sources */,
 				F90B50FB23F62A8F00161684 /* AppKeyValuesStackView.swift in Sources */,
 				F91D039823F5DB12002A88A6 /* SceneDelegate.swift in Sources */,
 				F90B50FF23F72A9400161684 /* Observable+Extension.swift in Sources */,
 				F90B50EF23F6071200161684 /* AppTextField.swift in Sources */,
+				F9DB667824130F390069DDCB /* FileProvider.swift in Sources */,
 				F90B50FD23F71ACA00161684 /* UIColor+Extension.swift in Sources */,
 				F936364C240E087C0084D0A5 /* ResponseParser.swift in Sources */,
 				F936364E240E0DF10084D0A5 /* ResponseViewController.swift in Sources */,
