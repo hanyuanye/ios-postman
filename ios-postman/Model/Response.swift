@@ -1,5 +1,5 @@
 //
-//  Collection.swift
+//  Response.swift
 //  ios-postman
 //
 //  Created by Hanyuan Ye on 2020-03-06.
@@ -8,11 +8,10 @@
 
 import Foundation
 
-
-struct Collection: Codable {
+struct Response {
     
-    var id: String
-    var environment: Environment
-    var requests: [Request]
+    let statusCode: String
+    let bodyText: NSAttributedString
+    let time: String
     
 }

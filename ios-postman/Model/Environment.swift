@@ -8,9 +8,10 @@
 
 import Foundation
 
-let GlobalEnv = Environment("")
+let GlobalEnv = FileProviderCurrent.loadGlobalEnvironment()
 
 struct Environment: Codable {
+    
     var variables: [String : String] = [:]
     
     init(_ file: String) {
@@ -24,6 +25,7 @@ struct Environment: Codable {
     func resolve(variable: String) -> String? {
         return variables[variable]
     }
+    
 }
 
 // MARK: - Utilities
@@ -50,7 +52,8 @@ extension Environment {
     static func resolve(text: String, using environments: [Environment]) -> Either<String, [Failure]> {
         let regex = try! NSRegularExpression(pattern: "{{\\w+}}")
         
-        let matches = regex.matches(in: text, options: [], range: NSRange(location: 0, length: text.utf16.count))
+        let matches = regex
+            .matches(in: text, options: [], range: NSRange(location: 0, length: text.utf16.count))
             .map { (text as NSString).substring(with: $0.range) }
         
         let variables = matches
@@ -68,10 +71,10 @@ extension Environment {
         
         let resolvingDict = Dictionary(zip(matches, resolvedValues)) { (first, _) in first }
         
-        let resolvedText = resolvingDict.reduce(text) { (String, pair) -> String in
-            text.replacingOccurrences(of: pair.key, with: pair.value)
-        }
+        let resolvedText = resolvingDict
+            .reduce(text) { $0.replacingOccurrences(of: $1.key, with: $1.value) }
         
         return .left(resolvedText)
     }
+    
 }

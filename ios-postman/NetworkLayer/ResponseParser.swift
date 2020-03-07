@@ -11,6 +11,7 @@ import Foundation
 let ResponseParser = ResponseParserManager()
 
 struct ResponseParserManager {
+    
     var html: (Data) -> NSAttributedString?
     var json: (Data) -> NSAttributedString?
     var response: (Data) -> NSAttributedString?
@@ -20,9 +21,11 @@ struct ResponseParserManager {
         json = { $0.json }
         response = { $0.response }
     }
+    
 }
 
 extension Data {
+    
     fileprivate var html: NSAttributedString? {
         try? NSAttributedString(
             data: self,
@@ -42,11 +45,12 @@ extension Data {
         
         return NSAttributedString(string: prettyPrintedString)
     }
-    
+
     fileprivate var response: NSAttributedString {
         if let json = json { return json }
         if let html = html { return html }
         
         return NSAttributedString()
     }
+    
 }

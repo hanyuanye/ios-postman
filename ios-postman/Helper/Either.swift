@@ -1,6 +1,7 @@
 import Foundation
 
 public enum Either<Left, Right> {
+    
     case left(Left)
     case right(Right)
 
@@ -29,4 +30,5 @@ public enum Either<Left, Right> {
             try ifRight(right)
         }
     }
+    
 }

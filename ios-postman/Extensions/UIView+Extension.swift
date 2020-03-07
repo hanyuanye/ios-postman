@@ -2,6 +2,7 @@ import UIKit
 import RxSwift
 
 extension UIView {
+    
     public static func insertHeader(_ view: UIView, text: String) -> UIStackView {
         let label = UILabel()
         label.text = text

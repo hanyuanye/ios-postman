@@ -2,6 +2,7 @@ import UIKit
 import RxSwift
 
 class AppKeyValuesStackView: UIView {
+    
     let disposeBag = DisposeBag()
     
     let keyValuesBehavior = BehaviorSubject<[(String, String)]>(value: [])
@@ -97,10 +98,13 @@ class AppKeyValuesStackView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
 }
 
 extension Reactive where Base: AppKeyValuesStackView {
+    
     var keyValues: BehaviorSubject<[(String, String)]> {
         return base.keyValuesBehavior
     }
+    
 }

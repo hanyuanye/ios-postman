@@ -11,11 +11,12 @@ import RxSwift
 import SnapKit
 
 class ResponseViewController: UIViewController {
-    private let responseText: NSAttributedString
+    
+    private let response: Response
     
     private lazy var responseLabel: UILabel = {
         let label = UILabel()
-        label.attributedText = self.responseText
+        label.attributedText = self.response.bodyText
         label.font = .systemFont(ofSize: 20)
         label.textColor = .white
         label.numberOfLines = 0
@@ -28,8 +29,8 @@ class ResponseViewController: UIViewController {
         return scrollView
     }()
     
-    init(responseText: NSAttributedString) {
-        self.responseText = responseText
+    init(response: Response) {
+        self.response = response
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -64,4 +65,5 @@ class ResponseViewController: UIViewController {
     @objc func close() {
         navigationController?.popViewController(animated: true)
     }
+    
 }

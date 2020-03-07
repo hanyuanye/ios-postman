@@ -12,6 +12,7 @@ import RxOptional
 var scheduler = MainScheduler.instance
 
 extension ObservableType {
+    
     public func filterMap<T>(_ transform: @escaping (Element) -> T?) -> Observable<T> {
         map(transform).filterNil()
     }
@@ -21,4 +22,5 @@ extension ObservableType {
             .observeOn(scheduler)
             .bind(onNext: onNext)
     }
+    
 }

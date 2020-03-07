@@ -3,6 +3,7 @@ import RxSwift
 import UIKit
 
 class AppKeyValueView: UIView {
+    
     lazy var keyTextField: AppTextField = {
         let textField = AppTextField()
         textField.placeholder = "Key"
@@ -77,13 +78,16 @@ class AppKeyValueView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
 }
 
 extension Reactive where Base: AppKeyValueView {
+    
     var keyValue: Observable<(String, String)> {
         Observable.combineLatest(
             base.keyTextField.rx.text.orEmpty,
             base.valueTextField.rx.text.orEmpty
         ) {($0, $1)}
     }
+    
 }

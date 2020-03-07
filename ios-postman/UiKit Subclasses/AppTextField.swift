@@ -9,6 +9,7 @@
 import UIKit
 
 class AppTextField: UITextField {
+    
     let padding: UIEdgeInsets
     
     init(padding: UIEdgeInsets = .init(top: 0, left: 5, bottom: 0, right: 5)) {
@@ -31,4 +32,5 @@ class AppTextField: UITextField {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
 }

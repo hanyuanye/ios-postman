@@ -18,51 +18,50 @@ func MainViewModel(
     queryParams: Observable<[(String, String)]>,
     headers: Observable<[(String, String)]>,
     method: Observable<HTTPMethods>
-) -> (Observable<NSAttributedString>){
+) -> (Observable<Response>){
     
     let request = Observable
         .combineLatest(baseURL, queryParams, headers, method)
     
-    let response = sendRequest
+    let networkResponse = sendRequest
         .withLatestFrom(request)
-        .map { arg -> URLRequest? in
-            let baseURL = arg.0.replacingOccurrences(of: "http://", with: "")
-            let queryParams = arg.1
-            let headers = arg.2
-            let method = arg.3
-            
-            guard var components = URLComponents(string: baseURL) else { return nil }
-            
-            components.scheme = "http"
-            components.queryItems = queryParams
-                .filter { !$0.0.isEmpty && !$0.1.isEmpty }
-                .map { URLQueryItem(name: $0.0, value: $0.1) }
-            
-            guard let url = components.url else { return nil }
-            
-            var request = URLRequest(url: url)
-            request.httpMethod = method.rawValue
-            headers.forEach {
-                guard !$0.0.isEmpty, !$0.1.isEmpty else { return }
-                request.setValue($0.1, forHTTPHeaderField: $0.0)
-            }
-            
-            return request
-        }
-        .flatMapLatest { NetworkProvider.performRequest($0) }
-        .filterMap { response -> NSAttributedString? in
-            if let error = response.right {
-                return NSAttributedString(string: error.localizedDescription)
-            }
-            else if let data = response.left{
-                return ResponseParser.response(data)
-            }
-            else {
-                return nil
-            }
-        }
+        .map { Request(baseURL: $0.0, queryParams: $0.1.toDict, headers: $0.2.toDict, method: $0.3, auth: .basic) }
+        .map { $0.asURL }
+        .flatMapLatest { NetworkProviderCurrent.performRequest($0) }
     
-    return response
+    let success = networkResponse.filterMap { $0.left }
+    
+    let error = networkResponse.filterMap { $0.right }
+    
+    let failedStatusCode = error
+        .map { String($0.statusCodeError) }
+        .replaceNilWith("No Status Code")
+    
+    let statusCode = Observable.merge(
+        success.map { _ in "200" },
+        failedStatusCode
+    )
+    
+    let errorFailedBodyText = error
+        .map { $0.dataTaskError?.localizedDescription }
+        .replaceNilWith("No Response")
+        .map { NSAttributedString(string: "Encountered Error: \($0)") }
+    
+    let bodyText = Observable.merge(
+        success.map { ResponseParser.response($0) ?? NSAttributedString() },
+        errorFailedBodyText
+    )
+    
+    let time = networkResponse.map { _ in "" }
+    
+    let response = Observable.zip(
+        statusCode,
+        bodyText,
+        time
+    ).map { Response(statusCode: $0.0, bodyText: $0.1, time: $0.2) }
+    
+    
+    return (response)
 }
 
 class MainViewController: UIViewController {
@@ -214,7 +213,8 @@ class MainViewController: UIViewController {
             baseURL: self.baseURLTextField.rx.text.orEmpty.asObservable(),
             queryParams: self.queryKeyValuesView.rx.keyValues,
             headers: self.queryKeyValuesView.rx.keyValues,
-            method: .just(.get))
+            method: .just(.get)
+        )
 
         self.disposeBag.insert(
             response.bindOnMain(onNext: { [weak self] (response) in
@@ -227,9 +227,10 @@ class MainViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
-    func presentResponseViewController(_ responseText: NSAttributedString) {
-        let vc = ResponseViewController(responseText: responseText)
+    func presentResponseViewController(_ response: Response) {
+        let vc = ResponseViewController(response: response)
         self.navigationController?.pushViewController(vc, animated: true)
     }
+    
 }
 
