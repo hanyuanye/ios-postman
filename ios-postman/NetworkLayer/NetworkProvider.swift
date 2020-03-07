@@ -8,10 +8,8 @@ struct NetworkProvider {
     var performRequest: (URLRequest?) -> Observable<Either<Data, Failure>>
     
     init() {
-        let manager = NetworkProviderManager
+        let manager = NetworkProviderManager()
         performRequest = { manager.performRequest($0) }
-        
-        
     }
     
     enum Failure {
@@ -27,7 +25,7 @@ struct NetworkProvider {
         }
         
         var dataTaskError: Error? {
-            if case .dataTaskError(let error) = self { return error)  }
+            if case .dataTaskError(let error) = self { return error  }
             return nil
         }
         
@@ -52,15 +50,15 @@ fileprivate struct NetworkProviderManager {
     func performRequest(_ request: URLRequest?) -> Observable<Either<Data, NetworkProvider.Failure>> {
         guard let request = request else { return .just(.right(.couldNotResolveURL))}
          
-         return Observable<Either<Data, Error>>.create { observer in
+        return Observable<Either<Data, NetworkProvider.Failure>>.create { observer in
              let cancellable = URLSession.shared.dataTask(with: request) { (data, response, error) in
                  guard error == nil else {
-                    observer.onNext(.right(.dataTaskError(error)))
+                     observer.onNext(.right(.dataTaskError(error!)))
                      return
                  }
                  
                  guard let httpResponse = response as? HTTPURLResponse else {
-                    observer.onNext(.right(noResponse))
+                    observer.onNext(.right(.noResponse))
                      return
                  }
                  

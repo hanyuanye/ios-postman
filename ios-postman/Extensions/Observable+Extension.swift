@@ -17,7 +17,7 @@ extension ObservableType {
         map(transform).filterNil()
     }
     
-    public func bindOnMain(onNext: @escaping (E) -> Void) -> Disposable {
+    public func bindOnMain(onNext: @escaping (Element) -> Void) -> Disposable {
         return self
             .observeOn(scheduler)
             .bind(onNext: onNext)

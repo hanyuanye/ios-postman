@@ -13,6 +13,9 @@ enum Auth: String, Codable {
 }
 
 func MainViewModel(
+    networkProvider: Observable<NetworkProvider>,
+    fileProvider: Observable<FileProvider>,
+    responseParser: Observable<ResponseParser>,
     sendRequest: Observable<Void>,
     baseURL: Observable<String>,
     queryParams: Observable<[(String, String)]>,
@@ -22,12 +25,13 @@ func MainViewModel(
     
     let request = Observable
         .combineLatest(baseURL, queryParams, headers, method)
+        .map { Request(baseURL: $0.0, queryParams: $0.1.toDict, headers: $0.2.toDict, method: $0.3, auth: .basic) }
     
     let networkResponse = sendRequest
         .withLatestFrom(request)
-        .map { Request(baseURL: $0.0, queryParams: $0.1.toDict, headers: $0.2.toDict, method: $0.3, auth: .basic) }
         .map { $0.asURL }
-        .flatMapLatest { NetworkProviderCurrent.performRequest($0) }
+        .withLatestFrom(networkProvider) { ($1, $0) }
+        .flatMapLatest { $0.performRequest($1) }
     
     let success = networkResponse.filterMap { $0.left }
     
@@ -42,13 +46,17 @@ func MainViewModel(
         failedStatusCode
     )
     
+    let successBodyText = success
+        .withLatestFrom(responseParser) { ($1, $0) }
+        .map { $0.response($1) ?? NSAttributedString() }
+    
     let errorFailedBodyText = error
         .map { $0.dataTaskError?.localizedDescription }
         .replaceNilWith("No Response")
         .map { NSAttributedString(string: "Encountered Error: \($0)") }
     
     let bodyText = Observable.merge(
-        success.map { ResponseParser.response($0) ?? NSAttributedString() },
+        successBodyText,
         errorFailedBodyText
     )
     
@@ -209,6 +217,9 @@ class MainViewController: UIViewController {
         }
         
         let (response) = MainViewModel(
+            networkProvider: .just(NetworkProviderCurrent),
+            fileProvider: .just(FileProviderCurrent),
+            responseParser: .just(ResponseParserCurrent),
             sendRequest: self.sendButton.rx.controlEvent(.touchUpInside).asObservable(),
             baseURL: self.baseURLTextField.rx.text.orEmpty.asObservable(),
             queryParams: self.queryKeyValuesView.rx.keyValues,

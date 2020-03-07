@@ -211,6 +211,7 @@
 		F91D039423F5DB12002A88A6 /* ios-postman */ = {
 			isa = PBXGroup;
 			children = (
+				F9DB667F241336460069DDCB /* ViewController */,
 				F91D039523F5DB12002A88A6 /* AppDelegate.swift */,
 				F91D039723F5DB12002A88A6 /* SceneDelegate.swift */,
 				F9DB667624130EB10069DDCB /* FileLayer */,
@@ -219,8 +220,6 @@
 				F96C560623F72CC600580AC2 /* Helper */,
 				F90B50F723F60FF600161684 /* UiKit Subclasses */,
 				F90B50F623F60FE500161684 /* Extensions */,
-				F91D039923F5DB12002A88A6 /* MainViewController.swift */,
-				F936364D240E0DF10084D0A5 /* ResponseViewController.swift */,
 				F91D039E23F5DB12002A88A6 /* Assets.xcassets */,
 				F91D03A323F5DB12002A88A6 /* Info.plist */,
 				F90B50EA23F5F8FD00161684 /* Launch Screen.storyboard */,
@@ -307,6 +306,15 @@
 				F9DB667724130F390069DDCB /* FileProvider.swift */,
 			);
 			path = FileLayer;
+			sourceTree = "<group>";
+		};
+		F9DB667F241336460069DDCB /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F936364D240E0DF10084D0A5 /* ResponseViewController.swift */,
+				F91D039923F5DB12002A88A6 /* MainViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -8,9 +8,9 @@
 
 import Foundation
 
-let ResponseParser = ResponseParserManager()
+let ResponseParserCurrent = ResponseParser()
 
-struct ResponseParserManager {
+struct ResponseParser {
     
     var html: (Data) -> NSAttributedString?
     var json: (Data) -> NSAttributedString?
