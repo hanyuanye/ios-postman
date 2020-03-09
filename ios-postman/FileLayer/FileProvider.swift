@@ -14,12 +14,14 @@ struct FileProvider {
     
     var saveCollection: (Collection) -> Either<Void, Failure>
     var loadCollections: () -> Either<[Collection], Failure>
+    var saveGlobalEnvironment: (Environment) -> Either<Void, Failure>
     var loadGlobalEnvironment: () -> Either<Environment, Failure>
     
     init() {
         let manager = FileProviderManager()
         saveCollection = { manager.saveCollection($0) }
         loadCollections = { manager.loadCollections() }
+        saveGlobalEnvironment = { manager.saveGlobalEnvironment($0) }
         loadGlobalEnvironment = { manager.loadGlobalEnvironment() }
     }
     
@@ -34,11 +36,14 @@ struct FileProvider {
 
 fileprivate struct FileProviderManager {
     
+    static let environmentURL = "GlobalEnvironment"
+    
     var baseURL: URL? {
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         return paths.first
     }
     
+    @discardableResult
     func saveCollection(_ collection: Collection) -> Either<Void, FileProvider.Failure> {
         guard let baseURL = baseURL else {
             return .right(.noDirectory)
@@ -48,7 +53,7 @@ fileprivate struct FileProviderManager {
             return .right(.encodeFailure)
         }
         
-        let fileURL = baseURL.appendingPathComponent(collection.id)
+        let fileURL = baseURL.appendingPathComponent(collection.identity)
         
         
         do {
@@ -75,12 +80,32 @@ fileprivate struct FileProviderManager {
         return .left(collections)
     }
     
+    @discardableResult
+    func saveGlobalEnvironment(_ environment: Environment) -> Either<Void, FileProvider.Failure> {
+        guard let baseURL = baseURL else {
+            return .right(.noDirectory)
+        }
+        
+        guard let data = try? JSONEncoder().encode(environment) else {
+            return .right(.encodeFailure)
+        }
+        
+        let fileURL = baseURL.appendingPathComponent(FileProviderManager.environmentURL)
+        
+        do {
+            try data.write(to: fileURL)
+            return .left(())
+        } catch {
+            return .right(.fileSystemError(error))
+        }
+    }
+    
     func loadGlobalEnvironment() -> Either<Environment, FileProvider.Failure> {
         guard let baseURL = baseURL else {
             return .right(.noDirectory)
         }
         
-        let environmentURL = baseURL.appendingPathComponent("GlobalEnvironment")
+        let environmentURL = baseURL.appendingPathComponent(FileProviderManager.environmentURL)
         
         guard let data = try? Data(contentsOf: environmentURL),
               let environment = try? JSONDecoder().decode(Environment.self, from: data) else {

@@ -33,10 +33,18 @@
 		F9363647240E059A0084D0A5 /* RxOptional.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9363646240E059A0084D0A5 /* RxOptional.framework */; };
 		F936364C240E087C0084D0A5 /* ResponseParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F936364B240E087C0084D0A5 /* ResponseParser.swift */; };
 		F936364E240E0DF10084D0A5 /* ResponseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F936364D240E0DF10084D0A5 /* ResponseViewController.swift */; };
+		F94B80322415ABD0009F081C /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94B80312415ABD0009F081C /* UITableView+Extension.swift */; };
+		F94B80342415BF51009F081C /* RequestsTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94B80332415BF51009F081C /* RequestsTableViewModel.swift */; };
+		F94B80362415C143009F081C /* CollectionTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94B80352415C143009F081C /* CollectionTableViewModel.swift */; };
 		F96C560523F72C8B00580AC2 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96C560423F72C8B00580AC2 /* UIView+Extension.swift */; };
 		F96C560823F72D0700580AC2 /* Either.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96C560723F72D0700580AC2 /* Either.swift */; };
 		F96C560A23F7423200580AC2 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96C560923F7423100580AC2 /* String+Extension.swift */; };
 		F96C560C23F7439E00580AC2 /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96C560B23F7439E00580AC2 /* NetworkProvider.swift */; };
+		F97E13F924155AB3007F0192 /* RequestsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97E13F824155AB3007F0192 /* RequestsTableViewController.swift */; };
+		F988E3FA241359B200354E3A /* RequestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F988E3F9241359B200354E3A /* RequestViewModel.swift */; };
+		F988E3FC24135A3A00354E3A /* CollectionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F988E3FB24135A3A00354E3A /* CollectionsTableViewController.swift */; };
+		F988E3FE24135B4A00354E3A /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = F988E3FD24135B4A00354E3A /* State.swift */; };
+		F988E400241441B800354E3A /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F988E3FF241441B800354E3A /* Array+Extension.swift */; };
 		F9DB667124130A800069DDCB /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DB667024130A800069DDCB /* Environment.swift */; };
 		F9DB667324130B610069DDCB /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DB667224130B610069DDCB /* Collection.swift */; };
 		F9DB667524130B870069DDCB /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DB667424130B870069DDCB /* Request.swift */; };
@@ -116,10 +124,18 @@
 		F9363646240E059A0084D0A5 /* RxOptional.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxOptional.framework; path = Carthage/Build/iOS/RxOptional.framework; sourceTree = "<group>"; };
 		F936364B240E087C0084D0A5 /* ResponseParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseParser.swift; sourceTree = "<group>"; };
 		F936364D240E0DF10084D0A5 /* ResponseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseViewController.swift; sourceTree = "<group>"; };
+		F94B80312415ABD0009F081C /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
+		F94B80332415BF51009F081C /* RequestsTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestsTableViewModel.swift; sourceTree = "<group>"; };
+		F94B80352415C143009F081C /* CollectionTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionTableViewModel.swift; sourceTree = "<group>"; };
 		F96C560423F72C8B00580AC2 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIView+Extension.swift"; path = "/Users/hanyuanye/Documents/ios-postman/ios-postman/Extensions/UIView+Extension.swift"; sourceTree = "<absolute>"; };
 		F96C560723F72D0700580AC2 /* Either.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Either.swift; sourceTree = "<group>"; };
 		F96C560923F7423100580AC2 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "String+Extension.swift"; path = "/Users/hanyuanye/Documents/ios-postman/ios-postman/Extensions/String+Extension.swift"; sourceTree = "<absolute>"; };
 		F96C560B23F7439E00580AC2 /* NetworkProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
+		F97E13F824155AB3007F0192 /* RequestsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestsTableViewController.swift; sourceTree = "<group>"; };
+		F988E3F9241359B200354E3A /* RequestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestViewModel.swift; sourceTree = "<group>"; };
+		F988E3FB24135A3A00354E3A /* CollectionsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionsTableViewController.swift; sourceTree = "<group>"; };
+		F988E3FD24135B4A00354E3A /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
+		F988E3FF241441B800354E3A /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
 		F9DB667024130A800069DDCB /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		F9DB667224130B610069DDCB /* Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
 		F9DB667424130B870069DDCB /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
@@ -173,6 +189,8 @@
 				F90B50FC23F71ACA00161684 /* UIColor+Extension.swift */,
 				F96C560923F7423100580AC2 /* String+Extension.swift */,
 				F9DB667B241329250069DDCB /* StringArray+Extension.swift */,
+				F988E3FF241441B800354E3A /* Array+Extension.swift */,
+				F94B80312415ABD0009F081C /* UITableView+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -211,9 +229,8 @@
 		F91D039423F5DB12002A88A6 /* ios-postman */ = {
 			isa = PBXGroup;
 			children = (
+				F988E3F82413598C00354E3A /* ViewModel */,
 				F9DB667F241336460069DDCB /* ViewController */,
-				F91D039523F5DB12002A88A6 /* AppDelegate.swift */,
-				F91D039723F5DB12002A88A6 /* SceneDelegate.swift */,
 				F9DB667624130EB10069DDCB /* FileLayer */,
 				F936364A240E08600084D0A5 /* NetworkLayer */,
 				F9DB666F24130A300069DDCB /* Model */,
@@ -221,6 +238,8 @@
 				F90B50F723F60FF600161684 /* UiKit Subclasses */,
 				F90B50F623F60FE500161684 /* Extensions */,
 				F91D039E23F5DB12002A88A6 /* Assets.xcassets */,
+				F91D039523F5DB12002A88A6 /* AppDelegate.swift */,
+				F91D039723F5DB12002A88A6 /* SceneDelegate.swift */,
 				F91D03A323F5DB12002A88A6 /* Info.plist */,
 				F90B50EA23F5F8FD00161684 /* Launch Screen.storyboard */,
 			);
@@ -289,10 +308,21 @@
 			path = Helper;
 			sourceTree = "<group>";
 		};
+		F988E3F82413598C00354E3A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F988E3F9241359B200354E3A /* RequestViewModel.swift */,
+				F94B80332415BF51009F081C /* RequestsTableViewModel.swift */,
+				F94B80352415C143009F081C /* CollectionTableViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		F9DB666F24130A300069DDCB /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				F9DB667024130A800069DDCB /* Environment.swift */,
+				F988E3FD24135B4A00354E3A /* State.swift */,
 				F9DB667224130B610069DDCB /* Collection.swift */,
 				F9DB667424130B870069DDCB /* Request.swift */,
 				F9DB667D2413314C0069DDCB /* Response.swift */,
@@ -313,6 +343,8 @@
 			children = (
 				F936364D240E0DF10084D0A5 /* ResponseViewController.swift */,
 				F91D039923F5DB12002A88A6 /* MainViewController.swift */,
+				F988E3FB24135A3A00354E3A /* CollectionsTableViewController.swift */,
+				F97E13F824155AB3007F0192 /* RequestsTableViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -471,6 +503,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F94B80342415BF51009F081C /* RequestsTableViewModel.swift in Sources */,
 				F90B50F923F6101B00161684 /* AppKeyValueView.swift in Sources */,
 				F96C560A23F7423200580AC2 /* String+Extension.swift in Sources */,
 				F91D039A23F5DB12002A88A6 /* MainViewController.swift in Sources */,
@@ -480,17 +513,24 @@
 				F96C560523F72C8B00580AC2 /* UIView+Extension.swift in Sources */,
 				F96C560C23F7439E00580AC2 /* NetworkProvider.swift in Sources */,
 				F9DB667524130B870069DDCB /* Request.swift in Sources */,
+				F988E3FE24135B4A00354E3A /* State.swift in Sources */,
 				F9DB667324130B610069DDCB /* Collection.swift in Sources */,
+				F988E3FC24135A3A00354E3A /* CollectionsTableViewController.swift in Sources */,
 				F96C560823F72D0700580AC2 /* Either.swift in Sources */,
 				F90B50FB23F62A8F00161684 /* AppKeyValuesStackView.swift in Sources */,
+				F988E3FA241359B200354E3A /* RequestViewModel.swift in Sources */,
+				F97E13F924155AB3007F0192 /* RequestsTableViewController.swift in Sources */,
+				F988E400241441B800354E3A /* Array+Extension.swift in Sources */,
 				F9DB667C241329250069DDCB /* StringArray+Extension.swift in Sources */,
 				F91D039823F5DB12002A88A6 /* SceneDelegate.swift in Sources */,
 				F90B50FF23F72A9400161684 /* Observable+Extension.swift in Sources */,
+				F94B80362415C143009F081C /* CollectionTableViewModel.swift in Sources */,
 				F90B50EF23F6071200161684 /* AppTextField.swift in Sources */,
 				F9DB667824130F390069DDCB /* FileProvider.swift in Sources */,
 				F90B50FD23F71ACA00161684 /* UIColor+Extension.swift in Sources */,
 				F936364C240E087C0084D0A5 /* ResponseParser.swift in Sources */,
 				F936364E240E0DF10084D0A5 /* ResponseViewController.swift in Sources */,
+				F94B80322415ABD0009F081C /* UITableView+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

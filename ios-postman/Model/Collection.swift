@@ -7,12 +7,24 @@
 //
 
 import Foundation
+import RxDataSources
+import RxSwift
 
 
-struct Collection: Codable {
+struct Collection: Codable, Hashable, IdentifiableType {
     
-    var id: String
+    typealias Identity = String
+    
+    var identity: String
     var environment: Environment
     var requests: [Request]
+    var name: String
     
+    static let empty = Collection(identity: UUID().uuidString, environment: Environment(variables: [:]), requests: [], name: "Collection")
+    
+    mutating func add(_ request: Request) -> Int {
+        requests.append(request)
+        FileProviderCurrent.saveCollection(self)
+        return requests.count - 1
+    }
 }

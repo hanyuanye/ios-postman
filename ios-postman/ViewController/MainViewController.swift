@@ -2,79 +2,10 @@ import UIKit
 import SnapKit
 import RxSwift
 
-enum HTTPMethods: String, Codable {
-    case get = "GET"
-}
-
-enum Auth: String, Codable {
-    case basic
-    case oauth1
-    case oauth2
-}
-
-func MainViewModel(
-    networkProvider: Observable<NetworkProvider>,
-    fileProvider: Observable<FileProvider>,
-    responseParser: Observable<ResponseParser>,
-    sendRequest: Observable<Void>,
-    baseURL: Observable<String>,
-    queryParams: Observable<[(String, String)]>,
-    headers: Observable<[(String, String)]>,
-    method: Observable<HTTPMethods>
-) -> (Observable<Response>){
-    
-    let request = Observable
-        .combineLatest(baseURL, queryParams, headers, method)
-        .map { Request(baseURL: $0.0, queryParams: $0.1.toDict, headers: $0.2.toDict, method: $0.3, auth: .basic) }
-    
-    let networkResponse = sendRequest
-        .withLatestFrom(request)
-        .map { $0.asURL }
-        .withLatestFrom(networkProvider) { ($1, $0) }
-        .flatMapLatest { $0.performRequest($1) }
-    
-    let success = networkResponse.filterMap { $0.left }
-    
-    let error = networkResponse.filterMap { $0.right }
-    
-    let failedStatusCode = error
-        .map { String($0.statusCodeError) }
-        .replaceNilWith("No Status Code")
-    
-    let statusCode = Observable.merge(
-        success.map { _ in "200" },
-        failedStatusCode
-    )
-    
-    let successBodyText = success
-        .withLatestFrom(responseParser) { ($1, $0) }
-        .map { $0.response($1) ?? NSAttributedString() }
-    
-    let errorFailedBodyText = error
-        .map { $0.dataTaskError?.localizedDescription }
-        .replaceNilWith("No Response")
-        .map { NSAttributedString(string: "Encountered Error: \($0)") }
-    
-    let bodyText = Observable.merge(
-        successBodyText,
-        errorFailedBodyText
-    )
-    
-    let time = networkResponse.map { _ in "" }
-    
-    let response = Observable.zip(
-        statusCode,
-        bodyText,
-        time
-    ).map { Response(statusCode: $0.0, bodyText: $0.1, time: $0.2) }
-    
-    
-    return (response)
-}
-
 class MainViewController: UIViewController {
     
     private let disposeBag = DisposeBag()
+    private let request: Request
     
     private lazy var urlActionMenuButton: UIButton = {
         let button = UIButton()
@@ -195,7 +126,17 @@ class MainViewController: UIViewController {
     private lazy var contentScrollView: UIScrollView = {
         return UIScrollView()
     }()
-
+    
+    init(request: Request) {
+        self.request = request
+        
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -216,7 +157,8 @@ class MainViewController: UIViewController {
             make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(20)
         }
         
-        let (response) = MainViewModel(
+        let (response, importRequest) = MainViewModel(
+            inputRequest: .just(request),
             networkProvider: .just(NetworkProviderCurrent),
             fileProvider: .just(FileProviderCurrent),
             responseParser: .just(ResponseParserCurrent),
@@ -230,6 +172,12 @@ class MainViewController: UIViewController {
         self.disposeBag.insert(
             response.bindOnMain(onNext: { [weak self] (response) in
                 self?.presentResponseViewController(response)
+            }),
+            importRequest.bindOnMain(onNext: { (request) in
+                self.baseURLTextField.text = request.baseURL
+                self.queryKeyValuesView.importKeyValuesPublisher.onNext(request.queryParams)
+                self.headerKeyValuesView.importKeyValuesPublisher.onNext(request.headers)
+                self.urlActionMenuButton.setTitle(request.method.rawValue, for: .normal)
             })
         )
     }

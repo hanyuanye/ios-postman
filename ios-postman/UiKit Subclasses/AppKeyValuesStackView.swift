@@ -5,7 +5,8 @@ class AppKeyValuesStackView: UIView {
     
     let disposeBag = DisposeBag()
     
-    let keyValuesBehavior = BehaviorSubject<[(String, String)]>(value: [])
+    let keyValuesBehavior = BehaviorSubject<[Parameter]>(value: [])
+    let importKeyValuesPublisher = PublishSubject<[Parameter]>()
     
     private lazy var stackView: UIStackView = {
         let stackView = UIStackView()
@@ -76,8 +77,7 @@ class AppKeyValuesStackView: UIView {
         self.addKeyValueButton
             .rx
             .controlEvent(.touchUpInside)
-            .debug("button")
-            .flatMapLatest { [weak self] _ -> Observable<[(String, String)]> in
+            .flatMapLatest { [weak self] _ -> Observable<[Parameter]> in
             guard let self = self else { return .just([]) }
             
             let view = AppKeyValueView()
@@ -88,11 +88,33 @@ class AppKeyValuesStackView: UIView {
                 .arrangedSubviews
                 .compactMap { $0 as? AppKeyValueView }
                 .map { $0.rx.keyValue }
-            
-            return Observable.combineLatest(keyValuesArray)
+                
+            return Observable.zip(keyValuesArray)
         }
         .bind(to: keyValuesBehavior)
         .disposed(by: disposeBag)
+        
+        importKeyValuesPublisher.bindOnMain(onNext: { [weak self] (parameters) -> Void in
+            guard let self = self else { return }
+            
+            self.stackView
+                .arrangedSubviews
+                .compactMap { $0 as? AppKeyValueView }
+                .forEach {
+                    $0.removeFromSuperview()
+                    self.stackView.removeArrangedSubview($0)
+            }
+            
+            let views = parameters.map { parameter -> AppKeyValueView in
+                let view = AppKeyValueView(parameter: parameter)
+                view.translatesAutoresizingMaskIntoConstraints = false
+                return view
+            }
+            
+            views.forEach { self.stackView.addArrangedSubview($0) }
+        })
+        .disposed(by: disposeBag)
+        
     }
     
     required init?(coder: NSCoder) {
@@ -103,8 +125,12 @@ class AppKeyValuesStackView: UIView {
 
 extension Reactive where Base: AppKeyValuesStackView {
     
-    var keyValues: BehaviorSubject<[(String, String)]> {
-        return base.keyValuesBehavior
+    var keyValues: BehaviorSubject<[Parameter]> {
+        base.keyValuesBehavior
+    }
+    
+    var importKeyValuesPublisher: PublishSubject<[Parameter]> {
+        base.importKeyValuesPublisher
     }
     
 }

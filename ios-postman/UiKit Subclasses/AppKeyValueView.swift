@@ -38,6 +38,13 @@ class AppKeyValueView: UIView {
         return view
     }()
     
+    convenience init(parameter: Parameter) {
+        self.init(frame: .zero)
+        
+        keyTextField.text = parameter.key
+        valueTextField.text = parameter.value
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -83,11 +90,12 @@ class AppKeyValueView: UIView {
 
 extension Reactive where Base: AppKeyValueView {
     
-    var keyValue: Observable<(String, String)> {
+    var keyValue: Observable<Parameter> {
         Observable.combineLatest(
             base.keyTextField.rx.text.orEmpty,
             base.valueTextField.rx.text.orEmpty
         ) {($0, $1)}
+            .map { Parameter(key: $0, value: $1) }
     }
     
 }

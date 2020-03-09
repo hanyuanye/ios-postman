@@ -9,11 +9,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         self.window = UIWindow(windowScene: windowScene)
-        let nc = UINavigationController()
+        let vc = CollectionTableViewController(collections: Current.collections)
+        let nc = UINavigationController(rootViewController: vc)
         
-        nc.navigationBar.barTintColor = .black
-        let vc = MainViewController()
-        nc.addChild(vc)
+        nc.navigationBar.titleTextAttributes = [
+            NSAttributedString.Key.foregroundColor: UIColor.white
+        ]
+        
+        nc.navigationBar.isTranslucent = false
+        nc.navigationBar.barTintColor = .red
+        nc.navigationBar.tintColor = .blue
         
         self.window?.rootViewController = nc
         self.window?.makeKeyAndVisible()

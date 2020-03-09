@@ -10,13 +10,9 @@ import Foundation
 
 let GlobalEnv = FileProviderCurrent.loadGlobalEnvironment()
 
-struct Environment: Codable {
+struct Environment: Codable, Hashable {
     
     var variables: [String : String] = [:]
-    
-    init(_ file: String) {
-        
-    }
     
     mutating func add(_ value: String, to variable: String) {
         variables[value] = variable
