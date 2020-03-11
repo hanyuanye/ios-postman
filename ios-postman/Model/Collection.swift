@@ -20,7 +20,9 @@ struct Collection: Codable, Hashable, IdentifiableType {
     var requests: [Request]
     var name: String
     
-    static let empty = Collection(identity: UUID().uuidString, environment: Environment(variables: [:]), requests: [], name: "Collection")
+    static var empty: Collection {
+        Collection(identity: UUID().uuidString, environment: Environment(variables: [:]), requests: [], name: "Collection")
+    }
     
     mutating func add(_ request: Request) -> Int {
         requests.append(request)

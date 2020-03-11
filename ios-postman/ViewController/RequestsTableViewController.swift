@@ -113,6 +113,9 @@ class RequestsTableViewController: UIViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addRequest))
         
         let dataSource = RxTableViewSectionedAnimatedDataSource<RequestRxDataSourceModel>(
+            animationConfiguration: AnimationConfiguration(insertAnimation: .top,
+                                                           reloadAnimation: .fade,
+                                                           deleteAnimation: .left),
             configureCell: { dataSource, tableView, indexPath, request in
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier) as? RequestTableViewCell else {
                     return UITableViewCell()
@@ -126,16 +129,29 @@ class RequestsTableViewController: UIViewController {
             canMoveRowAtIndexPath: { _, _ in true }
         )
         
-        let (saveState, updateTable) = RequestsTableViewModel(
+        let (newCollection,
+            saveState,
+            updateTable,
+            shouldPresentRequest) =
+        RequestsTableViewModel(
             initial: initialState,
             collection: collectionBehavior,
             add: addPublisher,
             delete: tableView.rx.delete,
-            move: tableView.rx.move)
+            move: tableView.rx.move,
+            itemSelected: tableView.rx.itemSelected.asObservable())
         
         disposeBag.insert([
-            saveState.bind(to: collectionBehavior),
-            updateTable.bind(to: tableView.rx.items(dataSource: dataSource))
+            newCollection.bind(to: collectionBehavior),
+            saveState.bindOnMain(onNext: { [weak self] (collection) in
+                Current.saveCollectionPublisher.onNext(collection)
+                self?.collectionBehavior.onNext(collection)
+            }),
+            updateTable.bind(to: tableView.rx.items(dataSource: dataSource)),
+            shouldPresentRequest.bindOnMain(onNext: { [weak self] (vc) in
+                let nc = UINavigationController.standard(vc)
+                self?.navigationController?.present(nc, animated: true, completion: nil)
+            })
         ])
     }
     

@@ -49,6 +49,8 @@ class ResponseViewController: UIViewController {
         let backButton = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(close))
         navigationItem.leftBarButtonItem = backButton
         
+        view.backgroundColor = .black
+        
         scrollView.snp.makeConstraints { (make) in
             make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(10)
             make.leading.equalToSuperview().offset(10)

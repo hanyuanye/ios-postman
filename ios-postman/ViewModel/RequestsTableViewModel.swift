@@ -14,11 +14,16 @@ func RequestsTableViewModel(
     collection: Observable<Collection>,
     add: Observable<Void>,
     delete: Observable<TableView.Command>,
-    move: Observable<TableView.Command>
+    move: Observable<TableView.Command>,
+    itemSelected: Observable<IndexPath>
 ) -> (
     Observable<Collection>,
-    Observable<[RequestRxDataSourceModel]>
+    Observable<Collection>,
+    Observable<[RequestRxDataSourceModel]>,
+    Observable<MainViewController>
 ) {
+    
+    let initialState = collection.map { RequestRxDataSourceModel(items: $0.requests, id: "requests") }.take(1)
 
     let newState = Observable
         .merge(
@@ -29,20 +34,28 @@ func RequestsTableViewModel(
         .scan(initial) { (state: RequestRxDataSourceModel, command: TableView.Command) -> RequestRxDataSourceModel in
             TableView.execute(command: command, state: state)
         }
-        .startWith(initial)
         .share()
     
-    let saveState = newState
+    let newCollection = newState
         .withLatestFrom(collection) { ($0.items, $1) }
         .map { requests, collection -> Collection in
             var newCollection = collection
             newCollection.requests = requests
-            let result = FileProviderCurrent.saveCollection(collection)
-            return result.right == nil ? newCollection : collection
+            return newCollection
         }
+    
+    let save = newCollection
+        .debounce(.milliseconds(300), scheduler: MainScheduler.instance)
         
     
-    let updateTable = newState.map { [$0] }
+    let updateTable = Observable.merge(
+        newState,
+        initialState
+    ).map { [$0] }
     
-    return (saveState, updateTable)
+    let shouldPresentRequest = itemSelected
+        .withLatestFrom(collection) { $1.requests[$0.row] }
+        .map { MainViewController(request: $0) }
+    
+    return (newCollection, save, updateTable, shouldPresentRequest)
 }

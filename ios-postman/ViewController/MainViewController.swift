@@ -141,9 +141,7 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         
         navigationItem.title = "Request"
-        navigationController?.navigationBar.titleTextAttributes = [
-            NSAttributedString.Key.foregroundColor: UIColor.white
-        ]
+        navigationController?.navigationBar.backgroundColor = .black
         
         let backButton = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(close))
         navigationItem.leftBarButtonItem = backButton
@@ -180,6 +178,14 @@ class MainViewController: UIViewController {
                 self.urlActionMenuButton.setTitle(request.method.rawValue, for: .normal)
             })
         )
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
     }
     
     @objc func close() {

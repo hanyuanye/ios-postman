@@ -14,6 +14,7 @@ struct FileProvider {
     
     var saveCollection: (Collection) -> Either<Void, Failure>
     var loadCollections: () -> Either<[Collection], Failure>
+    var removeCollection: (Collection) -> Either<Void, Failure>
     var saveGlobalEnvironment: (Environment) -> Either<Void, Failure>
     var loadGlobalEnvironment: () -> Either<Environment, Failure>
     
@@ -23,6 +24,7 @@ struct FileProvider {
         loadCollections = { manager.loadCollections() }
         saveGlobalEnvironment = { manager.saveGlobalEnvironment($0) }
         loadGlobalEnvironment = { manager.loadGlobalEnvironment() }
+        removeCollection = { manager.removeCollection($0) }
     }
     
     enum Failure {
@@ -34,9 +36,13 @@ struct FileProvider {
     
 }
 
-fileprivate struct FileProviderManager {
+fileprivate class FileProviderManager {
     
     static let environmentURL = "GlobalEnvironment"
+    static let queueName = "FileProviderManager"
+    
+    private let dispatchQueue = DispatchQueue(label: FileProviderManager.queueName)
+    private let encoder = JSONEncoder()
     
     var baseURL: URL? {
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
@@ -78,6 +84,22 @@ fileprivate struct FileProviderManager {
             .compactMap { try? JSONDecoder().decode(Collection.self, from: $0) }
         
         return .left(collections)
+    }
+    
+    func removeCollection(_ collection: Collection) -> Either<Void, FileProvider.Failure>{
+        guard let baseURL = self.baseURL else {
+            return .right(.noDirectory)
+        }
+        
+        let url = baseURL.appendingPathComponent(collection.identity)
+        
+        do {
+            try FileManager.default.removeItem(at: url)
+        } catch {
+            return .right(.fileSystemError(error))
+        }
+        
+        return .left(())
     }
     
     @discardableResult

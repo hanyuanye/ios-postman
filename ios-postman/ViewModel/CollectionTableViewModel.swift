@@ -10,34 +10,20 @@ import Foundation
 import RxSwift
 
 func CollectionTableViewModel(
-    initial: CollectionRxDataSourceModel,
     collections: Observable<[Collection]>,
-    add: Observable<Void>,
-    delete: Observable<TableView.Command>,
-    move: Observable<TableView.Command>
+    itemSelected: Observable<IndexPath>
 ) -> (
-    Observable<[Collection]>,
-    Observable<[CollectionRxDataSourceModel]>
+    Observable<[CollectionRxDataSourceModel]>,
+    Observable<RequestsTableViewController>
 ) {
 
-    let newState = Observable
-        .merge(
-            add.map { TableView.Command.Append(Request.empty) },
-            delete,
-            move
-        )
-        .scan(initial) { (state: CollectionRxDataSourceModel, command: TableView.Command) -> CollectionRxDataSourceModel in
-            TableView.execute(command: command, state: state)
-        }
-        .startWith(initial)
-        .share()
+    let dataSource = collections
+        .scan(CollectionRxDataSourceModel(items: [], id: "")) { CollectionRxDataSourceModel(original: $0, items: $1)}
+        .map { [$0] }
     
-    let saveState = newState
-        .map { $0.items }
-        .distinctUntilChanged { Set($0) == Set($1) }
-        
+    let shouldPresentRequestsVC = itemSelected
+        .withLatestFrom(collections) { $1[$0.row] }
+        .map { RequestsTableViewController(collection: $0) }
     
-    let updateTable = newState.map { [$0] }
-    
-    return (saveState, updateTable)
+    return (dataSource, shouldPresentRequestsVC)
 }

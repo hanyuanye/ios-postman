@@ -18,7 +18,9 @@ struct Request: Codable, IdentifiableType, Equatable, Hashable {
     
     typealias Identity = String
     
-    static let empty = Request(baseURL: "", queryParams: [], headers: [], method: .get, auth: .basic, identity: UUID().uuidString)
+    static var empty: Request {
+        Request(baseURL: "", queryParams: [], headers: [], method: .get, auth: .basic, identity: UUID().uuidString)
+    }
     
     var baseURL: String
     var queryParams: [Parameter]

@@ -23,4 +23,7 @@ extension ObservableType {
             .bind(onNext: onNext)
     }
     
+    public func scan<A>(_ seed: Observable<A>, accumulator: @escaping(A,Element) throws -> A) -> Observable<A> {
+        return seed.take(1).flatMap { self.scan($0, accumulator: accumulator) }
+    }
 }

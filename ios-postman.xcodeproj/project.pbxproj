@@ -30,6 +30,7 @@
 		F91D03E723F5E763002A88A6 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F91D03DE23F5E762002A88A6 /* RxCocoa.framework */; };
 		F91D03E923F5E763002A88A6 /* RxDataSources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F91D03DF23F5E762002A88A6 /* RxDataSources.framework */; };
 		F91D03EB23F5E763002A88A6 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F91D03E023F5E762002A88A6 /* RxSwift.framework */; };
+		F934EE72241894CD00EBE570 /* UINavigationController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F934EE71241894CD00EBE570 /* UINavigationController+Extension.swift */; };
 		F9363647240E059A0084D0A5 /* RxOptional.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9363646240E059A0084D0A5 /* RxOptional.framework */; };
 		F936364C240E087C0084D0A5 /* ResponseParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F936364B240E087C0084D0A5 /* ResponseParser.swift */; };
 		F936364E240E0DF10084D0A5 /* ResponseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F936364D240E0DF10084D0A5 /* ResponseViewController.swift */; };
@@ -120,6 +121,7 @@
 		F91D03DE23F5E762002A88A6 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		F91D03DF23F5E762002A88A6 /* RxDataSources.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxDataSources.framework; path = Carthage/Build/iOS/RxDataSources.framework; sourceTree = "<group>"; };
 		F91D03E023F5E762002A88A6 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		F934EE71241894CD00EBE570 /* UINavigationController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extension.swift"; sourceTree = "<group>"; };
 		F9363645240DFD4B0084D0A5 /* RxOptional */ = {isa = PBXFileReference; lastKnownFileType = folder; name = RxOptional; path = Carthage/Checkouts/RxOptional; sourceTree = "<group>"; };
 		F9363646240E059A0084D0A5 /* RxOptional.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxOptional.framework; path = Carthage/Build/iOS/RxOptional.framework; sourceTree = "<group>"; };
 		F936364B240E087C0084D0A5 /* ResponseParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseParser.swift; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 				F9DB667B241329250069DDCB /* StringArray+Extension.swift */,
 				F988E3FF241441B800354E3A /* Array+Extension.swift */,
 				F94B80312415ABD0009F081C /* UITableView+Extension.swift */,
+				F934EE71241894CD00EBE570 /* UINavigationController+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -521,6 +524,7 @@
 				F988E3FA241359B200354E3A /* RequestViewModel.swift in Sources */,
 				F97E13F924155AB3007F0192 /* RequestsTableViewController.swift in Sources */,
 				F988E400241441B800354E3A /* Array+Extension.swift in Sources */,
+				F934EE72241894CD00EBE570 /* UINavigationController+Extension.swift in Sources */,
 				F9DB667C241329250069DDCB /* StringArray+Extension.swift in Sources */,
 				F91D039823F5DB12002A88A6 /* SceneDelegate.swift in Sources */,
 				F90B50FF23F72A9400161684 /* Observable+Extension.swift in Sources */,

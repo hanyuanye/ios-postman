@@ -74,13 +74,11 @@ class CollectionTableViewController: UIViewController {
     
     let disposeBag = DisposeBag()
  
-    let addPublisher = PublishSubject<Void>()
-    let collectionsBehavior: BehaviorSubject<[Collection]>
-    let initialState: CollectionRxDataSourceModel
+    let addPublisher = PublishSubject<Collection>()
+    let collectionsPublisher: BehaviorSubject<[Collection]>
     
-    init(collections: [Collection]) {
-        self.collectionsBehavior = BehaviorSubject<[Collection]>(value: collections)
-        self.initialState = CollectionRxDataSourceModel(items: collections, id: "collection")
+    init(collections: BehaviorSubject<[Collection]>) {
+        self.collectionsPublisher = collections
         
         super.init(nibName: nil, bundle: nil)
     }
@@ -109,13 +107,16 @@ class CollectionTableViewController: UIViewController {
             make.edges.equalTo(view.safeAreaLayoutGuide.snp.edges)
         }
         
-        navigationItem.title = "Request"
+        navigationItem.title = "Collections"
 
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addCollection))
         
         let dataSource = RxTableViewSectionedAnimatedDataSource<CollectionRxDataSourceModel>(
+            animationConfiguration: AnimationConfiguration(insertAnimation: .top,
+                                                           reloadAnimation: .fade,
+                                                           deleteAnimation: .left),
             configureCell: { dataSource, tableView, indexPath, request in
-                guard let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier) as? RequestTableViewCell else {
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier) as? CollectionTableViewCell else {
                     return UITableViewCell()
                 }
                 
@@ -127,21 +128,25 @@ class CollectionTableViewController: UIViewController {
             canMoveRowAtIndexPath: { _, _ in true }
         )
         
-        let (saveState, updateTable) = CollectionTableViewModel(
-            initial: initialState,
-            collections: collectionsBehavior,
-            add: addPublisher,
-            delete: tableView.rx.delete,
-            move: tableView.rx.move)
+        let (updateTable,
+            shouldPresentRequestVC) =
+        CollectionTableViewModel(
+            collections: collectionsPublisher,
+            itemSelected: tableView.rx.itemSelected.asObservable())
 
         disposeBag.insert([
-            saveState.bind(to: collectionsBehavior),
-            updateTable.bind(to: tableView.rx.items(dataSource: dataSource))
+            updateTable.bind(to: tableView.rx.items(dataSource: dataSource)),
+            shouldPresentRequestVC.bindOnMain(onNext: { [weak self] (vc) in
+                self?.navigationController?.pushViewController(vc, animated: true)
+            }),
+            addPublisher.bind(to: Current.addCollectionPublisher),
+            tableView.rx.itemDeleted.map { $0.row }.bind(to: Current.removeCollectionPublisher),
+            tableView.rx.itemMoved.map { ($0.row, $1.row) }.bind(to: Current.movePublisher)
         ])
     }
     
     @objc
     func addCollection() {
-        addPublisher.onNext(())
+        addPublisher.onNext(.empty)
     }
 }

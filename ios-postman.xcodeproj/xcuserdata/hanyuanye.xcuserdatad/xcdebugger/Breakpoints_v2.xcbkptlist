@@ -20,5 +20,69 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5F1CCEC3-3563-4609-9D0C-F7D1E719898D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ios-postman/ViewModel/CollectionTableViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "CollectionTableViewModel(collections:itemSelected:)"
+            landmarkType = "9">
+            <Locations>
+               <Location
+                  uuid = "5F1CCEC3-3563-4609-9D0C-F7D1E719898D - 3c7dda9a8601c05"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ios_postman.CollectionTableViewModel(collections: RxSwift.Observable&lt;Swift.Array&lt;ios_postman.Collection&gt;&gt;, itemSelected: RxSwift.Observable&lt;Foundation.IndexPath&gt;) -&gt; (RxSwift.Observable&lt;Swift.Array&lt;ios_postman.CollectionRxDataSourceModel&gt;&gt;, RxSwift.Observable&lt;ios_postman.RequestsTableViewController&gt;)"
+                  moduleName = "ios-postman"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hanyuanye/Documents/ios-postman/ios-postman/ViewModel/CollectionTableViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "79">
+               </Location>
+               <Location
+                  uuid = "5F1CCEC3-3563-4609-9D0C-F7D1E719898D - 2714aa6b2c858f43"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (ios_postman.CollectionRxDataSourceModel, Swift.Array&lt;ios_postman.Collection&gt;) -&gt; ios_postman.CollectionRxDataSourceModel in ios_postman.CollectionTableViewModel(collections: RxSwift.Observable&lt;Swift.Array&lt;ios_postman.Collection&gt;&gt;, itemSelected: RxSwift.Observable&lt;Foundation.IndexPath&gt;) -&gt; (RxSwift.Observable&lt;Swift.Array&lt;ios_postman.CollectionRxDataSourceModel&gt;&gt;, RxSwift.Observable&lt;ios_postman.RequestsTableViewController&gt;)"
+                  moduleName = "ios-postman"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hanyuanye/Documents/ios-postman/ios-postman/ViewModel/CollectionTableViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "51">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C0ADAEFD-D182-498C-86E2-04AA4E5CD5AE"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ios-postman/ViewController/MainViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "184"
+            endingLineNumber = "184"
+            landmarkName = "viewWillAppear(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
