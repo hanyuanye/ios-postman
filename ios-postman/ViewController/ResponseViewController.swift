@@ -31,6 +31,7 @@ class ResponseViewController: UIViewController {
     
     init(response: Response) {
         self.response = response
+        print(response)
         super.init(nibName: nil, bundle: nil)
     }
     

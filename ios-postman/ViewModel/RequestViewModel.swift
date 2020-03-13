@@ -42,9 +42,9 @@ func MainViewModel(
         .withLatestFrom(networkProvider) { ($1, $0) }
         .flatMapLatest { $0.performRequest($1) }
     
-    let success = networkResponse.filterMap { $0.left }
+    let success = networkResponse.filterMap { $0.data.left }
     
-    let error = networkResponse.filterMap { $0.right }
+    let error = networkResponse.filterMap { $0.data.right }
     
     let failedStatusCode = error
         .map { String($0.statusCodeError) }
@@ -69,7 +69,7 @@ func MainViewModel(
         errorFailedBodyText
     )
     
-    let time = networkResponse.map { _ in "" }
+        let time = networkResponse.map { String($0.time) }
     
     let response = Observable.zip(
         statusCode,

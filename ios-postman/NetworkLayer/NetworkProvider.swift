@@ -5,7 +5,7 @@ let NetworkProviderCurrent = NetworkProvider()
 
 struct NetworkProvider {
     
-    var performRequest: (URLRequest?) -> Observable<Either<Data, Failure>>
+    var performRequest: (URLRequest?) -> Observable<NetworkTimedResponse>
     
     init() {
         let manager = NetworkProviderManager()
@@ -46,34 +46,48 @@ struct NetworkProvider {
     }
 }
 
+struct NetworkTimedResponse {
+    let data: Either<Data, NetworkProvider.Failure>
+    let time: Double
+}
+
 fileprivate struct NetworkProviderManager {
-    func performRequest(_ request: URLRequest?) -> Observable<Either<Data, NetworkProvider.Failure>> {
-        guard let request = request else { return .just(.right(.couldNotResolveURL))}
+    func performRequest(_ request: URLRequest?) -> Observable<NetworkTimedResponse> {
+        guard let request = request else { return .just(NetworkTimedResponse(data: .right(.couldNotResolveURL), time: 0)) }
+        
+        let startTime = CFAbsoluteTimeGetCurrent()
          
-        return Observable<Either<Data, NetworkProvider.Failure>>.create { observer in
+        return Observable<NetworkTimedResponse>.create { observer in
              let cancellable = URLSession.shared.dataTask(with: request) { (data, response, error) in
+                let duration = CFAbsoluteTimeGetCurrent() - startTime
+                let networkResponse: Either<Data, NetworkProvider.Failure>
+                
+                defer {
+                    let timedResponse = NetworkTimedResponse(data: networkResponse, time: duration)
+                    observer.onNext(timedResponse)
+                }
+                
                  guard error == nil else {
-                     observer.onNext(.right(.dataTaskError(error!)))
+                     networkResponse = .right(.dataTaskError(error!))
                      return
                  }
                  
                  guard let httpResponse = response as? HTTPURLResponse else {
-                    observer.onNext(.right(.noResponse))
+                     networkResponse = .right(.noResponse)
                      return
                  }
                  
                  guard httpResponse.statusCode == 200 else {
-                     observer.onNext(.right(.statusCodeError(httpResponse.statusCode)))
+                     networkResponse = .right(.statusCodeError(httpResponse.statusCode))
                      return
                  }
                  
                  guard let data = data else {
-                     observer.onNext(.right(.noData))
+                     networkResponse = .right(.noData)
                      return
                  }
                  
-                 observer.onNext(.left(data))
-                 
+                 networkResponse = .left(data)
              }
              
              cancellable.resume()
