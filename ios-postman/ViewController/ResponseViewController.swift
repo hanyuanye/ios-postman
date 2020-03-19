@@ -14,13 +14,9 @@ class ResponseViewController: UIViewController {
     
     private let response: Response
     
-    private lazy var responseLabel: UILabel = {
-        let label = UILabel()
-        label.attributedText = self.response.bodyText
-        label.font = .systemFont(ofSize: 20)
-        label.textColor = .white
-        label.numberOfLines = 0
-        return label
+    private lazy var contentView: UIView = {
+        let view = JSONResponseView(data: response.body)
+        return JSONKeyValueView(key: "", view: view, bracketStyle: BracketStyle.style(response.body))
     }()
     
     private lazy var scrollView: UIScrollView = {
@@ -43,7 +39,7 @@ class ResponseViewController: UIViewController {
         super.viewDidLoad()
         
         view.addSubview(scrollView)
-        scrollView.addSubview(responseLabel)
+        scrollView.addSubview(contentView)
         
         navigationItem.title = "Response"
         
@@ -59,7 +55,7 @@ class ResponseViewController: UIViewController {
             make.bottom.equalToSuperview()
         }
         
-        responseLabel.snp.makeConstraints { (make) in
+        contentView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
             make.width.equalToSuperview()
         }

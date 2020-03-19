@@ -14,11 +14,13 @@ struct ResponseParser {
     
     var html: (Data) -> NSAttributedString?
     var json: (Data) -> NSAttributedString?
+    var test: (Data) -> Any?
     var response: (Data) -> NSAttributedString?
     
     init() {
         html = { $0.html }
         json = { $0.json }
+        test = { $0.test }
         response = { $0.response }
     }
     
@@ -34,14 +36,18 @@ extension Data {
             documentAttributes: nil)
     }
     
+    fileprivate var test: Any? {
+//        guard JSONSerialization.isValidJSONObject(self) else { return nil }
+        
+        return (try? JSONDecoder().decode(AnyDecodable.self, from: self))?.value
+    }
+    
     fileprivate var json: NSAttributedString? {
         guard let object = try? JSONSerialization.jsonObject(with: self, options: []),
               let data = try? JSONSerialization.data(withJSONObject: object, options: [.prettyPrinted]),
               let prettyPrintedString = String(data: data, encoding: .utf8) else {
             return nil
         }
-        
-        print(prettyPrintedString)
         
         return NSAttributedString(string: prettyPrintedString)
     }

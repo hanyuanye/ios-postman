@@ -9,14 +9,22 @@
 import Foundation
 import RxSwift
 
-enum HTTPMethods: String, Codable {
+enum HTTPMethods: String, Codable, CaseIterable {
     case get = "GET"
+    case post = "POST"
+    case head = "HEAD"
+    case put = "PUT"
+    case delete = "DELETE"
+    case connect = "CONNECT"
+    case options = "OPTIONS"
+    case trace = "TRACE"
 }
 
-enum Auth: String, Codable {
-    case basic
-    case oauth1
-    case oauth2
+enum Auth: String, Codable, CaseIterable {
+    case none  = "None"
+    case basic = "Basic"
+    case oauth1 = "OAuth 1.0a"
+    case oauth2 = "OAuth 2.0"
 }
 
 func MainViewModel(
@@ -30,11 +38,20 @@ func MainViewModel(
     headers: Observable<[Parameter]>,
     method: Observable<HTTPMethods>
 ) -> (Observable<Response>,
+      Observable<Request>,
       Observable<Request>){
     
-    let request = Observable
+    let editedRequest = Observable
         .combineLatest(baseURL, queryParams, headers, method, inputRequest)
         .map { Request(baseURL: $0.0, queryParams: $0.1, headers: $0.2, method: $0.3, auth: .basic, identity: $0.4.identity) }
+        
+    let request = Observable.merge(
+        editedRequest,
+        inputRequest
+    )
+        
+    // Skipping the request being imported in
+    let saveRequest = request.skip(1)
     
     let networkResponse = sendRequest
         .withLatestFrom(request)
@@ -57,26 +74,25 @@ func MainViewModel(
     
     let successBodyText = success
         .withLatestFrom(responseParser) { ($1, $0) }
-        .map { $0.response($1) ?? NSAttributedString() }
+        .map { $0.test($1) ?? NSAttributedString() }
     
     let errorFailedBodyText = error
         .map { $0.dataTaskError?.localizedDescription }
         .replaceNilWith("No Response")
         .map { NSAttributedString(string: "Encountered Error: \($0)") }
     
-    let bodyText = Observable.merge(
-        successBodyText,
-        errorFailedBodyText
-    )
+//    let bodyText = Observable.merge(
+//        successBodyText,
+//        errorFailedBodyText
+//    )
     
-        let time = networkResponse.map { String($0.time) }
+    let time = networkResponse.map { String($0.time) }
     
     let response = Observable.zip(
         statusCode,
-        bodyText,
+        successBodyText,
         time
-    ).map { Response(statusCode: $0.0, bodyText: $0.1, time: $0.2) }
+    ).map { Response(statusCode: $0.0, body: $0.1, time: $0.2) }
     
-    
-    return (response, inputRequest)
+    return (response, inputRequest, saveRequest)
 }

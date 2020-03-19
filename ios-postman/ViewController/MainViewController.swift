@@ -5,7 +5,9 @@ import RxSwift
 class MainViewController: UIViewController {
     
     private let disposeBag = DisposeBag()
+    
     private let request: Request
+    private let saveRequestPublisher: PublishSubject<Request>
     
     private lazy var urlActionMenuButton: UIButton = {
         let button = UIButton()
@@ -29,6 +31,8 @@ class MainViewController: UIViewController {
         textField.placeholder = "http://"
         textField.text = "http://"
         textField.textColor = .white
+        textField.autocorrectionType = .no
+        textField.autocapitalizationType = .none
         
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMaxXMinYCorner]
@@ -78,6 +82,18 @@ class MainViewController: UIViewController {
         return view
     }()
     
+    private lazy var segmentedControl: UISegmentedControl = {
+        let titles = Auth.allCases.map { $0.rawValue }
+        let segmentedControl = UISegmentedControl.init(items: titles)
+        segmentedControl.backgroundColor = .appButtonColor
+        
+        let attributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
+//        segmentedControl.title
+//        segmentedControl.
+        
+        return segmentedControl
+    }()
+    
     private lazy var sendButton: UIButton = {
         let button = UIButton()
         button.setTitle("Send", for: .normal)
@@ -111,6 +127,7 @@ class MainViewController: UIViewController {
             self.baseURLStackView,
             self.queryContentView,
             self.headerContentView,
+            self.segmentedControl,
             self.sendButtonContainer
         ])
         
@@ -127,8 +144,9 @@ class MainViewController: UIViewController {
         return UIScrollView()
     }()
     
-    init(request: Request) {
+    init(request: Request, saveRequestCallback: PublishSubject<Request>) {
         self.request = request
+        self.saveRequestPublisher = saveRequestCallback
         
         super.init(nibName: nil, bundle: nil)
     }
@@ -143,7 +161,7 @@ class MainViewController: UIViewController {
         navigationItem.title = "Request"
         navigationController?.navigationBar.backgroundColor = .black
         
-        let backButton = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(close))
+        let backButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(close))
         navigationItem.leftBarButtonItem = backButton
         
         view.addSubview(contentStackView)
@@ -155,13 +173,13 @@ class MainViewController: UIViewController {
             make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(20)
         }
         
-        let (response, importRequest) = MainViewModel(
+        let (response, importRequest, saveRequest) = MainViewModel(
             inputRequest: .just(request),
             networkProvider: .just(NetworkProviderCurrent),
             fileProvider: .just(FileProviderCurrent),
             responseParser: .just(ResponseParserCurrent),
             sendRequest: self.sendButton.rx.controlEvent(.touchUpInside).asObservable(),
-            baseURL: self.baseURLTextField.rx.text.orEmpty.asObservable(),
+            baseURL: self.baseURLTextField.rx.editText,
             queryParams: self.queryKeyValuesView.rx.keyValues,
             headers: self.queryKeyValuesView.rx.keyValues,
             method: .just(.get)
@@ -176,6 +194,24 @@ class MainViewController: UIViewController {
                 self.queryKeyValuesView.importKeyValuesPublisher.onNext(request.queryParams)
                 self.headerKeyValuesView.importKeyValuesPublisher.onNext(request.headers)
                 self.urlActionMenuButton.setTitle(request.method.rawValue, for: .normal)
+            }),
+            saveRequest.bind(to: saveRequestPublisher),
+            urlActionMenuButton.rx.controlEvent(.touchUpInside).bindOnMain(onNext: { [weak self] _ in
+                let alert = UIAlertController(title: "HTTP Method", message: "Set the HTTP Method", preferredStyle: .actionSheet)
+                
+                let actions = HTTPMethods.allCases.map { method -> UIAlertAction in
+                    UIAlertAction(title: method.rawValue, style: .default) { _ in
+                        self?.urlActionMenuButton.setTitle(method.rawValue, for: .normal)
+                    }
+                }
+                
+                actions.forEach { alert.addAction($0) }
+                
+                alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { _ in
+                    alert.dismiss(animated: true, completion: nil)
+                }))
+                
+                self?.present(alert, animated: true, completion: nil)
             })
         )
     }
@@ -189,7 +225,7 @@ class MainViewController: UIViewController {
     }
     
     @objc func close() {
-        navigationController?.popViewController(animated: true)
+        self.dismiss(animated: true, completion: nil)
     }
     
     func presentResponseViewController(_ response: Response) {
