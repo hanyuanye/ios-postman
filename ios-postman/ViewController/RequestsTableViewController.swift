@@ -77,6 +77,8 @@ class RequestsTableViewController: UIViewController {
     let collectionBehavior: BehaviorSubject<Collection>
     let initialState: RequestRxDataSourceModel
     
+    private let saveRequestPublisher = PublishSubject<Request>()
+    
     init(collection: Collection) {
         self.collectionBehavior = BehaviorSubject<Collection>(value: collection)
         self.initialState = RequestRxDataSourceModel(items: collection.requests, id: collection.identity)
@@ -136,6 +138,7 @@ class RequestsTableViewController: UIViewController {
         RequestsTableViewModel(
             initial: initialState,
             collection: collectionBehavior,
+            saveRequest: saveRequestPublisher,
             add: addPublisher,
             delete: tableView.rx.delete,
             move: tableView.rx.move,
@@ -148,9 +151,12 @@ class RequestsTableViewController: UIViewController {
                 self?.collectionBehavior.onNext(collection)
             }),
             updateTable.bind(to: tableView.rx.items(dataSource: dataSource)),
-            shouldPresentRequest.bindOnMain(onNext: { [weak self] (vc) in
+            shouldPresentRequest.bindOnMain(onNext: { [weak self] (request) in
+                guard let self = self else { return }
+                
+                let vc = MainViewController(request: request, saveRequestCallback: self.saveRequestPublisher)
                 let nc = UINavigationController.standard(vc)
-                self?.navigationController?.present(nc, animated: true, completion: nil)
+                self.navigationController?.present(nc, animated: true, completion: nil)
             })
         ])
     }

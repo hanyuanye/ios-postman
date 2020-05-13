@@ -11,7 +11,7 @@ import Foundation
 struct Response {
     
     let statusCode: String
-    let bodyText: NSAttributedString
+    let body: Any
     let time: String
     
 }

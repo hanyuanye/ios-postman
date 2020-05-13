@@ -12,6 +12,7 @@ import RxSwift
 func RequestsTableViewModel(
     initial: RequestRxDataSourceModel,
     collection: Observable<Collection>,
+    saveRequest: Observable<Request>,
     add: Observable<Void>,
     delete: Observable<TableView.Command>,
     move: Observable<TableView.Command>,
@@ -20,7 +21,7 @@ func RequestsTableViewModel(
     Observable<Collection>,
     Observable<Collection>,
     Observable<[RequestRxDataSourceModel]>,
-    Observable<MainViewController>
+    Observable<Request>
 ) {
     
     let initialState = collection.map { RequestRxDataSourceModel(items: $0.requests, id: "requests") }.take(1)
@@ -44,8 +45,23 @@ func RequestsTableViewModel(
             return newCollection
         }
     
-    let save = newCollection
-        .debounce(.milliseconds(300), scheduler: MainScheduler.instance)
+    let saveCollection = saveRequest
+        .withLatestFrom(collection) { (request, collection) -> Collection in
+            var newCollection = collection
+            
+            if let idx = newCollection.requests.firstIndex(where: { $0.identity == request.identity }) {
+                newCollection.requests[idx] = request
+            } else {
+                newCollection.requests.append(request)
+            }
+            
+            return newCollection
+        }
+    
+    let save = Observable.merge(
+        saveCollection,
+        newCollection.debounce(.milliseconds(300), scheduler: MainScheduler.instance)
+    )
         
     
     let updateTable = Observable.merge(
@@ -55,7 +71,6 @@ func RequestsTableViewModel(
     
     let shouldPresentRequest = itemSelected
         .withLatestFrom(collection) { $1.requests[$0.row] }
-        .map { MainViewController(request: $0) }
     
     return (newCollection, save, updateTable, shouldPresentRequest)
 }

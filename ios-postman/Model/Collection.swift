@@ -23,10 +23,4 @@ struct Collection: Codable, Hashable, IdentifiableType {
     static var empty: Collection {
         Collection(identity: UUID().uuidString, environment: Environment(variables: [:]), requests: [], name: "Collection")
     }
-    
-    mutating func add(_ request: Request) -> Int {
-        requests.append(request)
-        FileProviderCurrent.saveCollection(self)
-        return requests.count - 1
-    }
 }

@@ -31,6 +31,7 @@ struct Request: Codable, IdentifiableType, Equatable, Hashable {
     
     var asURL: URLRequest? {
         guard var components = URLComponents(string: baseURL) else { return nil }
+        print(baseURL)
         
         components.scheme = "http"
         components.queryItems = queryParams

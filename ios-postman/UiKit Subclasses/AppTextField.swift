@@ -15,6 +15,8 @@ class AppTextField: UITextField {
     init(padding: UIEdgeInsets = .init(top: 0, left: 5, bottom: 0, right: 5)) {
         self.padding = padding
         super.init(frame: .zero)
+        
+        autocorrectionType = .no
     }
     
     override func textRect(forBounds bounds: CGRect) -> CGRect {

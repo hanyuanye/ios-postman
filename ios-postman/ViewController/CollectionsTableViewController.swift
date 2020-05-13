@@ -41,30 +41,111 @@ struct CollectionRxDataSourceModel: AnimatableSectionModelType, Equatable {
 
 class CollectionTableViewCell: UITableViewCell {
     
-    private lazy var label: UILabel = {
+    let disposeBag = DisposeBag()
+    
+    private lazy var leftImageView: UIImageView = {
+        let image = #imageLiteral(resourceName: "hamburger-icon").withRenderingMode(.alwaysTemplate)
+        let imageView = UIImageView(image: image)
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.contentMode = .scaleAspectFit
+        imageView.tintColor = .white
+        
+        return imageView
+    }()
+    
+    private lazy var titleTextField: UITextField = {
+        let textField = UITextField()
+        
+        textField.font = .systemFont(ofSize: 20)
+        textField.textColor = .white
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.isUserInteractionEnabled = false
+        
+        return textField
+    }()
+    
+    private lazy var countLabel: UILabel = {
         let label = UILabel()
         
-        label.font = .systemFont(ofSize: 20)
-        label.textColor = .white
+        label.font = .systemFont(ofSize: 12)
+        label.textColor = .lightGray
+        label.translatesAutoresizingMaskIntoConstraints = false
         
         return label
+    }()
+    
+    private lazy var labelStackView: UIStackView = {
+        let stackView = UIStackView(arrangedSubviews: [
+            titleTextField,
+            countLabel
+        ])
+        
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.axis = .vertical
+        stackView.alignment = .leading
+        stackView.distribution = .fillProportionally
+        
+        return stackView
+    }()
+    
+    private lazy var editButton: UIButton = {
+        let button = UIButton()
+        let image = #imageLiteral(resourceName: "edit").withRenderingMode(.alwaysTemplate)
+        
+        button.setImage(image, for: .normal)
+        button.tintColor = .white
+        button.imageView?.contentMode = .scaleAspectFit
+        
+        return button
     }()
     
     private func setup() {
         backgroundColor = .black
         
-        addSubview(label)
+        addSubview(leftImageView)
+        addSubview(editButton)
+        addSubview(labelStackView)
         
-        label.snp.makeConstraints { (make) in
-            make.centerY.equalToSuperview()
+        leftImageView.snp.makeConstraints { (make) in
             make.leading.equalToSuperview().offset(10)
-            make.trailing.equalToSuperview().offset(10)
+            make.centerY.equalToSuperview()
+            make.height.equalTo(20)
+            make.width.equalTo(20)
         }
+        
+        editButton.snp.makeConstraints { (make) in
+            make.trailing.equalToSuperview().offset(-15)
+            make.height.equalTo(20)
+            make.width.equalTo(editButton.snp.height)
+            make.centerY.equalTo(leftImageView.snp.centerY)
+        }
+        
+        labelStackView.snp.makeConstraints { (make) in
+            make.leading.equalTo(leftImageView.snp.trailing).offset(20)
+            make.trailing.lessThanOrEqualTo(editButton.snp.leading)
+            make.centerY.equalToSuperview()
+            make.height.equalTo(40)
+        }
+        
+        disposeBag.insert([
+            editButton.rx.controlEvent(.touchUpInside).bindOnMain { [weak self] _ in
+                self?.titleTextField.isUserInteractionEnabled = true
+                self?.titleTextField.becomeFirstResponder()
+            },
+            titleTextField
+                .rx
+                .controlEvent(.editingDidEnd)
+                .withLatestFrom(titleTextField.rx.text)
+                .bindOnMain { (text) in
+                    print(text)
+                }
+        ])
     }
     
-    func configure(text: String) {
+    func configure(collection: Collection) {
         setup()
-        label.text = text
+        titleTextField.text = "COLLECTION"//collection.name
+        countLabel.text = "Number of items: \(collection.requests.count)"
     }
     
 }
@@ -115,12 +196,12 @@ class CollectionTableViewController: UIViewController {
             animationConfiguration: AnimationConfiguration(insertAnimation: .top,
                                                            reloadAnimation: .fade,
                                                            deleteAnimation: .left),
-            configureCell: { dataSource, tableView, indexPath, request in
+            configureCell: { dataSource, tableView, indexPath, collection in
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier) as? CollectionTableViewCell else {
                     return UITableViewCell()
                 }
                 
-                cell.configure(text: request.identity)
+                cell.configure(collection: collection)
                 
                 return cell
             },

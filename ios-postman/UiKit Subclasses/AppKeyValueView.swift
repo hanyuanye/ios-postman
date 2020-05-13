@@ -57,12 +57,14 @@ class AppKeyValueView: UIView {
             make.top.equalToSuperview()
             make.bottom.equalTo(seperatorView.snp.top).offset(-5)
             make.trailing.lessThanOrEqualTo(valueTextField.snp.leading)
+            make.width.greaterThanOrEqualTo(100)
         }
         
         valueTextField.snp.makeConstraints { (make) in
             make.trailing.equalToSuperview()
             make.top.equalToSuperview()
             make.bottom.equalTo(seperatorView.snp.top).offset(-5)
+            make.width.greaterThanOrEqualTo(100)
         }
         
         seperatorView.snp.makeConstraints { (make) in
@@ -92,8 +94,8 @@ extension Reactive where Base: AppKeyValueView {
     
     var keyValue: Observable<Parameter> {
         Observable.combineLatest(
-            base.keyTextField.rx.text.orEmpty,
-            base.valueTextField.rx.text.orEmpty
+            base.keyTextField.rx.editText,
+            base.valueTextField.rx.editText
         ) {($0, $1)}
             .map { Parameter(key: $0, value: $1) }
     }
